@@ -11,7 +11,10 @@ namespace Spotify
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage()) {
+                BarBackgroundColor = Color.Gray,
+                BarTextColor = Color.Black
+            };
         }
 
         protected override void OnStart()

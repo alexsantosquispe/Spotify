@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Spotify.Views;
 
 namespace Spotify
 {
@@ -12,6 +13,12 @@ namespace Spotify
         public MainPage()
         {
             InitializeComponent();
+            btnLogin.Clicked += OnLogin;
+        }
+
+        private async void OnLogin(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new HomePage());
         }
     }
 }
