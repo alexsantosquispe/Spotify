@@ -63,6 +63,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\GothamMedium_1.ttf" />
+    <AndroidAsset Include="Assets\GothamBold.ttf" />
+    <AndroidAsset Include="Assets\GothamBook.ttf" />
+    <AndroidAsset Include="Assets\GothamLight.ttf" />
+    <AndroidAsset Include="Assets\GothamMedium.ttf" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />

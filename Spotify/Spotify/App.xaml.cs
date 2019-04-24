@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Spotify.Views;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Spotify
@@ -11,8 +12,8 @@ namespace Spotify
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage()) {
-                BarBackgroundColor = Color.Gray,
+            MainPage = new NavigationPage(new LoginPage())
+            {
                 BarTextColor = Color.Black
             };
         }

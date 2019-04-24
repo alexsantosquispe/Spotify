@@ -3,5 +3,7 @@
   <PropertyGroup>
     <SelectedDevice>Sony F5121</SelectedDevice>
     <DefaultDevice>pixel_3</DefaultDevice>
+    <AndroidDesignerPreferredDevice>Nexus 4</AndroidDesignerPreferredDevice>
+    <AndroidDesignerPreferredTheme>Theme.DeviceDefault.NoActionBar.Fullscreen</AndroidDesignerPreferredTheme>
   </PropertyGroup>
 </Project>

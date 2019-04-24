@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:custom="clr-namespace:Spotify.Controls"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="Spotify.Views.LoginPage">
+
+    <StackLayout Padding="24, 8">
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Image Source="Spotify_Logo_RGB_Black.png" WidthRequest="200" VerticalOptions="Center" />
+        </StackLayout>
+        <Label Text="Login and enjoy!" FontSize="30" FontAttributes="Bold" TextColor="#000" HorizontalOptions="CenterAndExpand" />
+        <StackLayout VerticalOptions="EndAndExpand" Spacing="4" Padding="32">
+            <StackLayout>
+                <Label Text="Email" TextColor="Black" FontSize="15" />
+                <Entry x:Name="entryEmail" Keyboard="Email" Placeholder="Entre your email" />
+                <Label x:Name="emailError" Text="This field can't be empty" TextColor="Red" Margin="0, -8, 0, 0" IsVisible="False" />
+                <Label Text="Password" TextColor="Black" FontSize="15" />
+                <Entry x:Name="entryPassword" IsPassword="true" Placeholder="*********" />
+                <Label x:Name="passwordError" TextColor="Red" Text="This field can't be empty" Margin="0, -8, 0, 0" IsVisible="False" />
+            </StackLayout>
+            <Button x:Name="btnLogin" Text="Login" TextColor="White" BackgroundColor="#1DB954" CornerRadius="6" Margin="0, 16" />
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>

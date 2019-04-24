@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="Spotify.Templates.ItemList">
+    <Frame CornerRadius="8" BackgroundColor="#fff" HasShadow="False" IsClippedToBounds="True" Padding="0" Margin="0, 4">
+        <StackLayout Orientation="Horizontal" Padding="0">
+            <ffimageloading:CachedImage HorizontalOptions="Start" VerticalOptions="FillAndExpand" WidthRequest="70" DownsampleToViewSize="true" Source="{Binding Images[2].Url}" />
+            <StackLayout Padding="16, 4" VerticalOptions="Center">
+                <Label Text="{Binding Name}" TextColor="Black" FontSize="Medium" LineBreakMode="TailTruncation" MaxLines="2" />
+            </StackLayout>
+        </StackLayout>
+    </Frame>
+</ContentView>
