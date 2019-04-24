@@ -96,6 +96,11 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <BundleResource Include="Resources\GothamMedium_1.ttf" />
+    <BundleResource Include="Resources\GothamBold.ttf" />
+    <BundleResource Include="Resources\GothamBook.ttf" />
+    <BundleResource Include="Resources\GothamLight.ttf" />
+    <BundleResource Include="Resources\GothamMedium.ttf" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

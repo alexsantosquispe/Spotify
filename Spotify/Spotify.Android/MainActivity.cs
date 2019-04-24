@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using FFImageLoading.Forms.Platform;
 
 namespace Spotify.Droid
 {
@@ -19,6 +20,7 @@ namespace Spotify.Droid
 
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            CachedImageRenderer.Init(enableFastRenderer: true);
             LoadApplication(new App());
         }
     }
