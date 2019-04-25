@@ -13,3 +13,4 @@ D:\XamarinProjects\Spotify\Spotify\Spotify\obj\Debug\netstandard2.0\Spotify.dll
 D:\XamarinProjects\Spotify\Spotify\Spotify\obj\Debug\netstandard2.0\Spotify.pdb
 D:\XamarinProjects\Spotify\Spotify\Spotify\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
 D:\XamarinProjects\Spotify\Spotify\Spotify\obj\Debug\netstandard2.0\Views\DetailPage.xaml.g.cs
+D:\XamarinProjects\Spotify\Spotify\Spotify\obj\Debug\netstandard2.0\Templates\ItemTrack.xaml.g.cs

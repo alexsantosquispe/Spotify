@@ -15,7 +15,7 @@ namespace Spotify.Views
 
         private async void _OnLogin(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new HomePage());            
+            await Navigation.PushAsync(new HomePage());
         }
 
         //private void _ValidateEmail()

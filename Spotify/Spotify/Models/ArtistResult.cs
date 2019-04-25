@@ -4,6 +4,6 @@ namespace Spotify.Models
 {
     public class ArtistResult
     {
-        public Artists artists { get; set; }
+        public Artists Artists { get; set; }
     }
 }

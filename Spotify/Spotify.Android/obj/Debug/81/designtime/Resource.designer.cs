@@ -2363,6 +2363,9 @@ namespace Spotify.Droid
 			// aapt resource value: 0x7F09005B
 			public const int design_snackbar_background = 2131296347;
 			
+			// aapt resource value: 0x7F010005
+			public const int ic_action_arrow_back = 2130771973;
+			
 			// aapt resource value: 0x7F090054
 			public const int ic_audiotrack_dark = 2131296340;
 			

@@ -2,21 +2,21 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:templates="clr-namespace:Spotify.Templates"
-             xmlns:custom="clr-namespace:Spotify.Controls"
              x:Class="Spotify.Views.HomePage"
              NavigationPage.HasNavigationBar="False"
              Title="Rock">
-    <StackLayout Padding="16, 4">
-        <Label TextColor="Black" Text="Artists" FontAttributes="Bold" FontSize="24" HorizontalOptions="CenterAndExpand" Margin="16"/>
-        <ListView x:Name="artistList" SeparatorVisibility="None" RowHeight="80" SelectionMode="None">
-            <ListView.Header>
-                <StackLayout>
-                    <Frame BackgroundColor="White" CornerRadius="6" Padding="8" Margin="0, 8" HasShadow="False">
-                        <SearchBar  x:Name="searchArtist" Placeholder="Search Artists" TextColor="Black" HeightRequest="48"/>
-                    </Frame>
-                    <ActivityIndicator x:Name="loader" IsRunning="False" IsVisible="False" IsEnabled="False" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0, 60"/>
-                </StackLayout>
-            </ListView.Header>
+    <StackLayout>
+        <Frame BackgroundColor="White" CornerRadius="6" Padding="8" HasShadow="False">
+            <SearchBar x:Name="searchArtist" Placeholder="Search Artists" TextColor="Black" HeightRequest="48"/>
+        </Frame>
+        <ActivityIndicator IsVisible="{Binding IsLoading}" IsRunning="{Binding IsLoading}" Margin="0, 20"/>
+        <ListView x:Name="ArtistList"
+                  ItemsSource="{Binding Artists}"
+                  SelectedItem="{Binding SelectedArtist}"
+                  CachingStrategy="RecycleElement"
+                  SeparatorVisibility="None"
+                  Margin="8, 4"
+                  RowHeight="80">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -25,6 +25,5 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <!--#endregion-->
     </StackLayout>
 </ContentPage>
