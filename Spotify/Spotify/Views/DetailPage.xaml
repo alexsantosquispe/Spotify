@@ -1,10 +1,54 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             xmlns:templates="clr-namespace:Spotify.Templates"
              x:Class="Spotify.Views.DetailPage">
-  <ContentPage.Content>
-      <StackLayout>
-          <Label Text="Hello Xamarin.Forms!" />
-      </StackLayout>
-  </ContentPage.Content>
+    <ScrollView>
+        <StackLayout HorizontalOptions="CenterAndExpand">
+            <ffimageloading:CachedImage
+            Source="{Binding Images[0].Url}"
+            DownsampleToViewSize="true"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Aspect="AspectFit"
+            Margin="24"
+            HeightRequest="200"
+            WidthRequest="200">
+                <ffimageloading:CachedImage.Transformations>
+                    <fftransformations:CircleTransformation />
+                </ffimageloading:CachedImage.Transformations>
+            </ffimageloading:CachedImage>
+            <Label Text="{Binding Name}" 
+                   TextColor="Black"
+                   FontSize="Medium"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   LineBreakMode="TailTruncation"
+                   MaxLines="2" />
+            <ListView x:Name="TrackList"
+                  ItemsSource="{Binding Tracks}"
+                  SelectionMode="None"
+                  CachingStrategy="RecycleElement"
+                  SeparatorVisibility="None"
+                  Margin="12, 4"
+                  RowHeight="80">
+                <ListView.Header>
+                    <Label Text="Top Tracks"
+                           TextColor="Black"
+                           FontSize="Medium"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Start" />
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <templates:ItemList />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>
