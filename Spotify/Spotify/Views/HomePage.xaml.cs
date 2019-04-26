@@ -24,6 +24,6 @@ namespace Spotify.Views
                 Navigation.PushAsync(new DetailPage(artist));
                 ((ListView)sender).SelectedItem = null;
             }
-        }
+        }       
     }
 }

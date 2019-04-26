@@ -7,16 +7,24 @@
              Title="Rock">
     <StackLayout>
         <Frame BackgroundColor="White" CornerRadius="6" Padding="8" HasShadow="False">
-            <SearchBar x:Name="searchArtist" Placeholder="Search Artists" TextColor="Black" HeightRequest="48"/>
+            <SearchBar x:Name="searchArtist"
+                       Placeholder="Search Artists"
+                       SearchCommand="{Binding SearchArtistsCommand}"
+                       Text="{Binding SearchText}"                     
+                       TextColor="Black"
+                       HeightRequest="48" />
         </Frame>
-        <ActivityIndicator IsVisible="{Binding IsLoading}" IsRunning="{Binding IsLoading}" Margin="0, 20"/>
+        <ActivityIndicator IsVisible="{Binding IsLoading}"
+                           IsRunning="{Binding IsLoading}"
+                           IsEnabled="{Binding IsLoading}"
+                           Margin="0, 20" />
         <ListView x:Name="ArtistList"
                   ItemsSource="{Binding Artists}"
                   SelectedItem="{Binding SelectedArtist}"
                   CachingStrategy="RecycleElement"
                   SeparatorVisibility="None"
                   Margin="8, 4"
-                  RowHeight="80">
+                  RowHeight="70">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
