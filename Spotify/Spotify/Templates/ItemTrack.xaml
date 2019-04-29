@@ -5,18 +5,26 @@
              x:Class="Spotify.Templates.ItemTrack">
     <Frame CornerRadius="8" BackgroundColor="#fff" HasShadow="False" IsClippedToBounds="True" Padding="0" Margin="5">
         <StackLayout Orientation="Horizontal" Padding="0">
-            <!--<ffimageloading:CachedImage 
-                Source="{Binding Images[2].Url}"
+            <ffimageloading:CachedImage 
+                Source="{Binding Album.AlbumImage.Url}"
+                LoadingPlaceholder="user_loading.png"
+                LoadingDelay="50"
                 HorizontalOptions="Start"
-                VerticalOptions="FillAndExpand" 
-                WidthRequest="70" 
-                DownsampleToViewSize="true" />-->
+                VerticalOptions="FillAndExpand"
+                WidthRequest="60"
+                DownsampleToViewSize="true" />
             <StackLayout Padding="16, 4" VerticalOptions="Center">
                 <Label Text="{Binding Name}" 
-                   TextColor="Black" 
-                   FontSize="Medium" 
-                   LineBreakMode="TailTruncation"
-                   MaxLines="2" />
+                       TextColor="Black" 
+                       FontSize="Small" 
+                       LineBreakMode="TailTruncation"
+                       MaxLines="2" />
+                <Label Text="{Binding Album.Name}" 
+                       TextColor="DimGray" 
+                       FontSize="Micro"
+                       LineBreakMode="TailTruncation"
+                       Margin="0, -8, 0, 0"
+                       MaxLines="2" />
             </StackLayout>
         </StackLayout>
     </Frame>

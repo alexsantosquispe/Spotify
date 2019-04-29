@@ -2,15 +2,22 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              x:Class="Spotify.Templates.ItemList">
-    <Frame CornerRadius="8" BackgroundColor="#fff" HasShadow="False" IsClippedToBounds="True" Padding="0" Margin="5">
+    <Frame BackgroundColor="Transparent" HasShadow="False" IsClippedToBounds="True" Padding="0" Margin="5">
         <StackLayout Orientation="Horizontal" Padding="0">
             <ffimageloading:CachedImage 
-                Source="{Binding Images[2].Url}"
+                Source="{Binding MainImage.Url}"
+                LoadingPlaceholder="user_loading.png"
+                LoadingDelay="50"
                 HorizontalOptions="Start"
-                VerticalOptions="FillAndExpand" 
-                WidthRequest="70" 
-                DownsampleToViewSize="true" />
+                VerticalOptions="FillAndExpand"
+                WidthRequest="60"
+                DownsampleToViewSize="true">
+                <ffimageloading:CachedImage.Transformations>
+                    <fftransformations:CircleTransformation />
+                </ffimageloading:CachedImage.Transformations>
+            </ffimageloading:CachedImage>
             <StackLayout Padding="16, 4" VerticalOptions="Center">
                 <Label Text="{Binding Name}" 
                    TextColor="Black" 

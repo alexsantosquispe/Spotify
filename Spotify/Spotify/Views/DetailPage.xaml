@@ -6,49 +6,54 @@
              xmlns:templates="clr-namespace:Spotify.Templates"
              x:Class="Spotify.Views.DetailPage">
     <ScrollView>
-        <StackLayout HorizontalOptions="CenterAndExpand">
-            <ffimageloading:CachedImage
-            Source="{Binding Images[0].Url}"
-            DownsampleToViewSize="true"
-            HorizontalOptions="Center"
-            VerticalOptions="Center"
-            Aspect="AspectFit"
-            Margin="24"
-            HeightRequest="200"
-            WidthRequest="200">
-                <ffimageloading:CachedImage.Transformations>
-                    <fftransformations:CircleTransformation />
-                </ffimageloading:CachedImage.Transformations>
-            </ffimageloading:CachedImage>
-            <Label Text="{Binding Name}" 
-                   TextColor="Black"
-                   FontSize="Medium"
-                   FontAttributes="Bold"
-                   HorizontalOptions="Center"
-                   LineBreakMode="TailTruncation"
-                   MaxLines="2" />
-            <ListView x:Name="TrackList"
-                  ItemsSource="{Binding Tracks}"
-                  SelectionMode="None"
-                  CachingStrategy="RecycleElement"
-                  SeparatorVisibility="None"
-                  Margin="12, 4"
-                  RowHeight="80">
-                <ListView.Header>
+        <ListView x:Name="TrackList"
+                      ItemsSource="{Binding Tracks}"
+                      SelectionMode="None"
+                      CachingStrategy="RecycleElement"
+                      SeparatorVisibility="None"
+                      Margin="12, 4"
+                      RowHeight="70">
+            <ListView.Header>
+                <StackLayout Spacing="4">
+                    <ffimageloading:CachedImage
+                            Source="{Binding ImageArtist.Url}"
+                            DownsampleToViewSize="true"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Aspect="AspectFit"
+                            Margin="24"
+                            HeightRequest="200"
+                            WidthRequest="200">
+                        <ffimageloading:CachedImage.Transformations>
+                            <fftransformations:CircleTransformation />
+                        </ffimageloading:CachedImage.Transformations>
+                    </ffimageloading:CachedImage>
+                    <Label Text="{Binding Name}" 
+                           TextColor="Black"
+                           FontSize="Large"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           LineBreakMode="TailTruncation"
+                           MaxLines="2" />
                     <Label Text="Top Tracks"
                            TextColor="Black"
-                           FontSize="Medium"
+                           Margin="0, 8"
+                           FontSize="20"
                            FontAttributes="Bold"
                            HorizontalOptions="Start" />
-                </ListView.Header>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <templates:ItemList />
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+                    <ActivityIndicator IsVisible="{Binding IsLoading}"
+                           IsRunning="{Binding IsLoading}"
+                           IsEnabled="{Binding IsLoading}"
+                           Margin="0, 15" />
+                </StackLayout>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <templates:ItemTrack />
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </ScrollView>
 </ContentPage>

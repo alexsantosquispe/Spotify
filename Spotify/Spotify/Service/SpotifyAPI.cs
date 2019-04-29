@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using Newtonsoft.Json;
 using Spotify.Models;
 
@@ -42,9 +43,10 @@ namespace Spotify.Service
             return JsonConvert.DeserializeObject<SpotifyAccessToken>(Response);
         }
 
-        public async Task<List<Artist>> GetArtists()
+        public async Task<List<Artist>> GetArtists(string word)
         {
-            string GET_ARTIST = "/search?q=rock&type=artist&limit=20&offset=0";
+            string GET_ARTIST = "/search?q=" + word + "&type=artist&market=US&limit=15&offset=0";
+            GET_ARTIST = GET_ARTIST.Replace(" ", "%20");
             SpotifyAccessToken Token = await GetToken();
 
             _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(Token.token_type, Token.access_token);
@@ -60,22 +62,22 @@ namespace Spotify.Service
             return default(List<Artist>);
         }
 
-        //public async Task<List<Artist>> GetTopTracks(Artist artist)
-        //{
-        //    string GET_TRACKS = "/artists/" + artist.Id + "/top-tracks";
-        //    SpotifyAccessToken Token = await GetToken();
+        public async Task<List<Track>> GetTopTracks(string id)
+        {
+            string GET_TRACKS = "/artists/" + id + "/top-tracks?country=US";
+            SpotifyAccessToken Token = await GetToken();
 
-        //    _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(Token.token_type, Token.access_token);
+            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(Token.token_type, Token.access_token);
 
-        //    var response = await _client.GetAsync(BASE_URL + GET_TRACKS);
+            var response = await _client.GetAsync(BASE_URL + GET_TRACKS);
 
-        //    if (response.StatusCode == System.Net.HttpStatusCode.OK)
-        //    {
-        //        var jsonArtists = await response.Content.ReadAsStringAsync();
-        //        var result = JsonConvert.DeserializeObject<ArtistResult>(jsonArtists).Artists.Items;
-        //        return result;
-        //    }
-        //    return default(List<Artist>);
-        //}
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                var jsonArtists = await response.Content.ReadAsStringAsync();
+                var result = JsonConvert.DeserializeObject<CollectionTracks>(jsonArtists).Tracks;
+                return result;
+            }
+            return default(List<Track>);
+        }
     }
 }

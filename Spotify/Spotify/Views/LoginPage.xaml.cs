@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Spotify.ViewModel;
 
 namespace Spotify.Views
 {
@@ -10,6 +11,7 @@ namespace Spotify.Views
         public LoginPage()
         {
             InitializeComponent();
+            BindingContext = new LoginViewModel();
             btnLogin.Clicked += _OnLogin;
         }
 

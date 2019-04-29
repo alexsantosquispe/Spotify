@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using Spotify.Service;
+﻿using System.Collections.ObjectModel;
 using Spotify.Models;
-using System.Runtime.CompilerServices;
+using Xamarin.Forms;
+using System.Windows.Input;
+using Spotify.Service;
 using System.Threading.Tasks;
+using System;
 
 namespace Spotify.ViewModel
 {
@@ -18,33 +17,48 @@ namespace Spotify.ViewModel
         public ObservableCollection<Artist> Artists
         {
             get { return artists; }
-            set { artists = value; }
+            set
+            {
+                artists = value;
+                OnPropertyChanged("Artists");
+            }
         }
 
-        private bool _isLoading = false;
+        private string _searchText;
 
-        public bool IsLoading
+        public string SearchText
         {
-            get { return _isLoading; }
-            set { _isLoading = value; }
+            get { return _searchText; }
+            set
+            {
+                _searchText = value;
+                OnPropertyChanged("_searchText");
+            }
         }
+
+        public ICommand SearchArtistsCommand { get; private set; }
 
         public ArtistViewModel()
         {
-            _PopulateArtists();
-            IsLoading = false;
+            //_SearchArtists("rock");
+            SearchArtistsCommand = new Command(async () => await _SearchArtists(SearchText), () => !IsLoading);
         }
 
-        private async void _PopulateArtists()
+        public async Task _SearchArtists(string query)
         {
             try
             {
                 IsLoading = true;
-                var artistList = await _spotifyAPI.GetArtists();
-                foreach (Artist artist in artistList)
+                var artistList = await _spotifyAPI.GetArtists(query.ToLower());
+                if (artistList.Count > 0)
                 {
-                    Artists.Add(artist);
+                    Artists.Clear();
+                    foreach (Artist artist in artistList)
+                    {
+                        Artists.Add(artist);
+                    }
                 }
+                IsLoading = false;
             }
             catch (Exception e)
             {
