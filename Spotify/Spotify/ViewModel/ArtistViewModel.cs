@@ -40,7 +40,6 @@ namespace Spotify.ViewModel
 
         public ArtistViewModel()
         {
-            //_SearchArtists("rock");
             SearchArtistsCommand = new Command(async () => await _SearchArtists(SearchText), () => !IsLoading);
         }
 

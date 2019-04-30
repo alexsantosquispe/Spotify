@@ -45,7 +45,7 @@ namespace Spotify.Service
 
         public async Task<List<Artist>> GetArtists(string word)
         {
-            string GET_ARTIST = "/search?q=" + word + "&type=artist&market=US&limit=15&offset=0";
+            string GET_ARTIST = "/search?q=" + word + "&type=artist&market=US&limit=20&offset=0";
             GET_ARTIST = GET_ARTIST.Replace(" ", "%20");
             SpotifyAccessToken Token = await GetToken();
 

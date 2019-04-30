@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Plugin.Connectivity;
+﻿using Plugin.Connectivity;
 
 namespace Spotify.Utils
 {
