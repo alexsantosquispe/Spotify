@@ -13,25 +13,30 @@
         <StackLayout VerticalOptions="EndAndExpand" Spacing="4" Padding="32">
             <StackLayout>
                 <Label Text="Email" TextColor="Black" FontSize="15" />
-                <Entry x:Name="entryEmail"
-                       Text="{Binding EmailText}"
+                <Entry Text="{Binding EmailText}"
                        Keyboard="Email"
                        Placeholder="Entre your email" />
-                <Label Text="This field can't be empty" TextColor="Red" Margin="0, -8, 0, 0" IsVisible="{Binding EmailError}" />
+                <Label Text="{Binding EmailErrorMessage}"
+                       TextColor="Red"
+                       Margin="0, -8, 0, 0"
+                       IsVisible="{Binding EmailError}"
+                       IsEnabled="{Binding EmailError}" />
                 <Label Text="Password" TextColor="Black" FontSize="15" />
-                <Entry x:Name="entryPassword"
-                       Text="{Binding PasswordText}"
+                <Entry Text="{Binding PasswordText}"
                        IsPassword="true"
                        Placeholder="*********" />
-                <Label Text="This field can't be empty" TextColor="Red" Margin="0, -8, 0, 0" IsVisible="{Binding PasswordError}" />
+                <Label Text="{Binding PasswordErrorMessage}"
+                       TextColor="Red"
+                       Margin="0, -8, 0, 0"
+                       IsVisible="{Binding PasswordError}"
+                       IsEnabled="{Binding PasswordError}" />
             </StackLayout>
-            <Button x:Name="btnLogin"
-                    Text="Login"
+            <Button Text="Login"
                     TextColor="White"
                     BackgroundColor="#1DB954"
                     CornerRadius="6" 
                     Margin="0, 16" 
-                    Command="{Binding OnLogin}" />
+                    Command="{Binding OnLoginCommand}" />
         </StackLayout>
     </StackLayout>
 

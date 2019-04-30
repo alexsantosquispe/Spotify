@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "c1af7c464b9adf51aa77fbfed47741968e94a511"
+    "signature": "23448f60a1ffd125b77ef2b7468b5c6f24267032"
   },
   "compilationOptions": {},
   "targets": {
@@ -12,6 +12,7 @@
           "Microsoft.Net.Http": "2.2.29",
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "12.0.2",
+          "Refit": "4.6.107",
           "Xam.Plugin.Connectivity": "3.2.0",
           "Xamarin.FFImageLoading.Forms": "2.4.4.859",
           "Xamarin.FFImageLoading.Svg.Forms": "2.4.4.859",
@@ -47,6 +48,14 @@
       "Newtonsoft.Json/12.0.2": {
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Refit/4.6.107": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Refit.dll": {}
         }
       },
       "SkiaSharp/1.60.0": {
@@ -160,6 +169,13 @@
       "sha512": "sha512-rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
       "path": "newtonsoft.json/12.0.2",
       "hashPath": "newtonsoft.json.12.0.2.nupkg.sha512"
+    },
+    "Refit/4.6.107": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sBIYAMYMJYSWzl5Vt0FjGuaEFIaAG9y7O8rXvjzpyQCYLKe22Sk9LoQ50K7Jpj/3no+9eNUQSwmKpTkq7+tKUw==",
+      "path": "refit/4.6.107",
+      "hashPath": "refit.4.6.107.nupkg.sha512"
     },
     "SkiaSharp/1.60.0": {
       "type": "package",
