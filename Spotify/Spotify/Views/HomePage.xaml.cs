@@ -12,8 +12,13 @@ namespace Spotify.Views
         public HomePage()
         {
             InitializeComponent();
-            BindingContext = new ArtistViewModel();
+            BindingContext = new HomeViewModel();
             ArtistList.ItemSelected += ArtistSelected;
+        }
+
+        private async void GoToSettings(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SettingsPage());
         }
 
         private void ArtistSelected(object sender, SelectedItemChangedEventArgs e)

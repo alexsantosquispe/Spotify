@@ -3,28 +3,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="Spotify.Templates.ItemTrack">
-    <Frame CornerRadius="8" BackgroundColor="#fff" HasShadow="False" IsClippedToBounds="True" Padding="0" Margin="5">
+    <Frame CornerRadius="8" HasShadow="False" IsClippedToBounds="True" Padding="0" Margin="5" Style="{StaticResource BackgroundItem}">
         <StackLayout Orientation="Horizontal" Padding="0">
             <ffimageloading:CachedImage 
                 Source="{Binding Album.AlbumImage.Url}"
-                LoadingPlaceholder="user_loading.png"
+                LoadingPlaceholder="track.png"
                 LoadingDelay="50"
                 HorizontalOptions="Start"
                 VerticalOptions="FillAndExpand"
                 WidthRequest="60"
                 DownsampleToViewSize="true" />
             <StackLayout Padding="16, 4" VerticalOptions="Center">
-                <Label Text="{Binding Name}" 
-                       TextColor="Black" 
+                <Label Text="{Binding Name}"                       
                        FontSize="Small" 
                        LineBreakMode="TailTruncation"
-                       MaxLines="2" />
-                <Label Text="{Binding Album.Name}" 
-                       TextColor="DimGray" 
+                       MaxLines="2"
+                       Style="{StaticResource Title}"/>
+                <Label Text="{Binding Album.Name}"                       
                        FontSize="Micro"
                        LineBreakMode="TailTruncation"
                        Margin="0, -8, 0, 0"
-                       MaxLines="2" />
+                       MaxLines="2"
+                       Style="{StaticResource SubTitle}"/>
             </StackLayout>
         </StackLayout>
     </Frame>

@@ -39,10 +39,12 @@ namespace Spotify.ViewModel
             {
                 IsLoading = true;
                 var topTracks = await _spotifyAPI.GetTopTracks(artistId);
-                foreach (Track track in topTracks)
-                {
-                    Tracks.Add(track);
-                }
+                if (topTracks != null && topTracks.Count > 0) {
+                    foreach (Track track in topTracks)
+                    {
+                        Tracks.Add(track);
+                    }
+                }                
                 IsLoading = false;
             }
             catch (Exception e)

@@ -4,47 +4,44 @@
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              xmlns:templates="clr-namespace:Spotify.Templates"
+             NavigationPage.HasNavigationBar="False"
              x:Class="Spotify.Views.DetailPage">
-    <ScrollView>
-        <ListView x:Name="TrackList"
-                      ItemsSource="{Binding Tracks}"
-                      SelectionMode="None"
-                      CachingStrategy="RecycleElement"
-                      SeparatorVisibility="None"
-                      Margin="12, 4"
-                      RowHeight="70">
+    <StackLayout Style="{StaticResource BackgroundPage}">
+        <ListView ItemsSource="{Binding Tracks}"
+                    SelectionMode="None"
+                    CachingStrategy="RecycleElement"
+                    SeparatorVisibility="None"
+                    Margin="12, 4"
+                    RowHeight="70">
             <ListView.Header>
                 <StackLayout Spacing="4">
                     <ffimageloading:CachedImage
-                            Source="{Binding ImageArtist.Url}"
-                            DownsampleToViewSize="true"
-                            HorizontalOptions="Center"
-                            VerticalOptions="Center"
-                            Aspect="AspectFit"
-                            Margin="24"
-                            HeightRequest="200"
-                            WidthRequest="200">
+                        Source="{Binding ImageArtist.Url}"
+                        DownsampleToViewSize="true"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Aspect="AspectFit"
+                        Margin="24"
+                        HeightRequest="200"
+                        WidthRequest="200">
                         <ffimageloading:CachedImage.Transformations>
                             <fftransformations:CircleTransformation />
                         </ffimageloading:CachedImage.Transformations>
                     </ffimageloading:CachedImage>
-                    <Label Text="{Binding Name}" 
-                           TextColor="Black"
-                           FontSize="Large"
-                           FontAttributes="Bold"
-                           HorizontalOptions="Center"
-                           LineBreakMode="TailTruncation"
-                           MaxLines="2" />
+                    <Label Text="{Binding Name}"
+                            FontSize="25"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Center"
+                            LineBreakMode="TailTruncation"
+                            MaxLines="2"
+                            Style="{StaticResource Title}" />
                     <Label Text="Top Tracks"
-                           TextColor="Black"
-                           Margin="0, 8"
-                           FontSize="20"
-                           FontAttributes="Bold"
-                           HorizontalOptions="Start" />
-                    <ActivityIndicator IsVisible="{Binding IsLoading}"
-                           IsRunning="{Binding IsLoading}"
-                           IsEnabled="{Binding IsLoading}"
-                           Margin="0, 15" />
+                            Margin="0, 8"
+                            FontSize="20"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Start"
+                            Style="{StaticResource Title}" />
+                    <ActivityIndicator IsVisible="{Binding IsLoading}" IsRunning="{Binding IsLoading}" IsEnabled="{Binding IsLoading}" Margin="0, 15" />
                 </StackLayout>
             </ListView.Header>
             <ListView.ItemTemplate>
@@ -55,5 +52,14 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-    </ScrollView>
+        <StackLayout
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="EndAndExpand"
+            Margin="-1"
+            IsVisible="{Binding IsOffline}"
+            IsEnabled="{Binding IsOffline}"
+            Style="{StaticResource OfflineLayout}">
+            <Label Text="No Internet connection" HorizontalOptions="CenterAndExpand" Style="{StaticResource OfflineText}" />
+        </StackLayout>
+    </StackLayout>
 </ContentPage>

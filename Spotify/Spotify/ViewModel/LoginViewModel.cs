@@ -87,7 +87,15 @@ namespace Spotify.ViewModel
             }
         }
 
-        public ICommand OnLoginCommand { get; private set; }                
+        private string _logo;
+
+        public string Logo
+        {
+            get { return _logo; }
+            set { _logo = value; }
+        }
+
+        public ICommand OnLoginCommand { get; private set; }
 
         public void ValidateEmail()
         {
@@ -101,11 +109,11 @@ namespace Spotify.ViewModel
             {
                 EmailErrorMessage = "Invalid Email";
                 EmailError = true;
-            }            
+            }
         }
-        
+
         public void ValidatePassword()
-        {            
+        {
             PasswordError = false;
             if (validator.IsEmpty(PasswordText))
             {
@@ -121,7 +129,13 @@ namespace Spotify.ViewModel
 
         public async void GoToHomePage()
         {
-            await _navigation.PushAsync(new HomePage());
+            _navigation.InsertPageBefore(new HomePage(), _navigation.NavigationStack[0]);
+            await _navigation.PopToRootAsync();
+        }
+
+        public void SaveSession()
+        {
+            Application.Current.Properties["Email"] = _emailText;
         }
 
         public void OnLogin()
@@ -130,6 +144,7 @@ namespace Spotify.ViewModel
             ValidatePassword();
             if (!EmailError && !PasswordError)
             {
+                SaveSession();
                 GoToHomePage();
             }
         }
@@ -137,6 +152,7 @@ namespace Spotify.ViewModel
         public LoginViewModel(INavigation navigation)
         {
             _navigation = navigation;
+            Logo = "spotify_logo_" + GetCurrentTheme().ToLower() + ".png";
             OnLoginCommand = new Command(OnLogin);
         }
     }
