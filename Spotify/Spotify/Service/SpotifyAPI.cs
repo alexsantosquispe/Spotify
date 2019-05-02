@@ -4,15 +4,16 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web;
 using Newtonsoft.Json;
 using Spotify.Models;
+using Spotify.Utils;
 
 namespace Spotify.Service
 {
     public class SpotifyAPI
     {
         private HttpClient _client;
+        private readonly Network _network = new Network();
         private const string BASE_URL = "https://api.spotify.com/v1";
         private const string TOKEN_URL = "https://accounts.spotify.com/api/token";
         private const string CLIENT_ID = "e17a0b97649a49058fb90483a7802d54";
@@ -29,35 +30,41 @@ namespace Spotify.Service
         {            
             string Credentials = String.Format("{0}:{1}", CLIENT_ID, CLIENT_SECRET);
 
-            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(Encoding.UTF8.GetBytes(Credentials)));
+            if (_network.IsConnected())
+            {
+                _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(Encoding.UTF8.GetBytes(Credentials)));
 
-            //Prepare Request Body
-            List<KeyValuePair<string, string>> RequestData = new List<KeyValuePair<string, string>>();
-            RequestData.Add(new KeyValuePair<string, string>("grant_type", "client_credentials"));
+                //Prepare Request Body
+                List<KeyValuePair<string, string>> RequestData = new List<KeyValuePair<string, string>>();
+                RequestData.Add(new KeyValuePair<string, string>("grant_type", "client_credentials"));
 
-            FormUrlEncodedContent RequestBody = new FormUrlEncodedContent(RequestData);
+                FormUrlEncodedContent RequestBody = new FormUrlEncodedContent(RequestData);
 
-            //Request Token
-            var RequesToken = await _client.PostAsync(TOKEN_URL, RequestBody);
-            string Response = await RequesToken.Content.ReadAsStringAsync();
-            return JsonConvert.DeserializeObject<SpotifyAccessToken>(Response);
+                //Request Token
+                var RequesToken = await _client.PostAsync(TOKEN_URL, RequestBody);
+                string Response = await RequesToken.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<SpotifyAccessToken>(Response);
+            }
+            return default(SpotifyAccessToken);
         }
 
         public async Task<List<Artist>> GetArtists(string word)
         {
             string GET_ARTIST = "/search?q=" + word + "&type=artist&market=US&limit=20&offset=0";
             GET_ARTIST = GET_ARTIST.Replace(" ", "%20");
-            SpotifyAccessToken Token = await GetToken();
-
-            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(Token.token_type, Token.access_token);
-
-            var response = await _client.GetAsync(BASE_URL + GET_ARTIST);
-
-            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            if (_network.IsConnected())
             {
-                var jsonArtists = await response.Content.ReadAsStringAsync();
-                var result = JsonConvert.DeserializeObject<ArtistResult>(jsonArtists).Artists.Items;
-                return result;
+                SpotifyAccessToken Token = await GetToken();
+                _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(Token.token_type, Token.access_token);
+
+                var response = await _client.GetAsync(BASE_URL + GET_ARTIST);
+
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    var jsonArtists = await response.Content.ReadAsStringAsync();
+                    var result = JsonConvert.DeserializeObject<ArtistResult>(jsonArtists).Artists.Items;
+                    return result;
+                }                
             }
             return default(List<Artist>);
         }
@@ -65,18 +72,21 @@ namespace Spotify.Service
         public async Task<List<Track>> GetTopTracks(string id)
         {
             string GET_TRACKS = "/artists/" + id + "/top-tracks?country=US";
-            SpotifyAccessToken Token = await GetToken();
 
-            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(Token.token_type, Token.access_token);
-
-            var response = await _client.GetAsync(BASE_URL + GET_TRACKS);
-
-            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            if (_network.IsConnected())
             {
-                var jsonArtists = await response.Content.ReadAsStringAsync();
-                var result = JsonConvert.DeserializeObject<CollectionTracks>(jsonArtists).Tracks;
-                return result;
-            }
+                SpotifyAccessToken Token = await GetToken();
+                _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(Token.token_type, Token.access_token);
+
+                var response = await _client.GetAsync(BASE_URL + GET_TRACKS);
+
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    var jsonArtists = await response.Content.ReadAsStringAsync();
+                    var result = JsonConvert.DeserializeObject<CollectionTracks>(jsonArtists).Tracks;
+                    return result;
+                }
+            }            
             return default(List<Track>);
         }
     }

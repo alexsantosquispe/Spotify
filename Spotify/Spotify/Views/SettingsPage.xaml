@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             Title="Settings"
+             x:Class="Spotify.Views.SettingsPage">
+    <ScrollView>
+        <StackLayout Padding="16">
+            <!--#region session-->
+            <Label Text="Accout" TextColor="#1DB954" FontAttributes="Bold" />
+            <StackLayout Orientation="Horizontal">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding LogoutCommand}"/>
+                </StackLayout.GestureRecognizers>
+                <ffimageloading:CachedImage
+                    Source="user.png"
+                    HorizontalOptions="Start"
+                    VerticalOptions="FillAndExpand"
+                    WidthRequest="50"
+                    DownsampleToViewSize="true">
+                    <ffimageloading:CachedImage.Transformations>
+                        <fftransformations:CircleTransformation />
+                    </ffimageloading:CachedImage.Transformations>
+                </ffimageloading:CachedImage>
+                <StackLayout Padding="16, 4" VerticalOptions="Center" Spacing="2">
+                    <Label Text="{Binding EmailUser}" 
+                       TextColor="#000"
+                       FontSize="Medium" 
+                       LineBreakMode="TailTruncation"
+                       MaxLines="2" />
+                    <Label Text="Log out"
+                       TextColor="Gray"
+                       FontSize="Small" 
+                       LineBreakMode="TailTruncation"
+                       MaxLines="2" />
+                </StackLayout>
+            </StackLayout>
+            <!--#endregion-->
+            <!--#region theme-->
+            <Label Text="Appearance" TextColor="#1DB954" FontAttributes="Bold" Margin="0, 8, 0, 0" />
+            <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Vertical" HorizontalOptions="Start" Spacing="2">
+                    <Label Text="Theme" TextColor="Black" LineBreakMode="WordWrap" />
+                    <Label Text="Light mode" TextColor="Gray" LineBreakMode="WordWrap" />
+                </StackLayout>
+                <Switch IsToggled="{Binding Status}" HorizontalOptions="EndAndExpand" />
+            </StackLayout>
+            <!--#endregion-->
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

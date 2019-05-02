@@ -6,16 +6,17 @@
              xmlns:templates="clr-namespace:Spotify.Templates"
              x:Class="Spotify.Views.DetailPage">
     <ScrollView>
-        <ListView x:Name="TrackList"
+        <StackLayout>
+            <ListView x:Name="TrackList"
                       ItemsSource="{Binding Tracks}"
                       SelectionMode="None"
                       CachingStrategy="RecycleElement"
                       SeparatorVisibility="None"
                       Margin="12, 4"
                       RowHeight="70">
-            <ListView.Header>
-                <StackLayout Spacing="4">
-                    <ffimageloading:CachedImage
+                <ListView.Header>
+                    <StackLayout Spacing="4">
+                        <ffimageloading:CachedImage
                             Source="{Binding ImageArtist.Url}"
                             DownsampleToViewSize="true"
                             HorizontalOptions="Center"
@@ -24,36 +25,46 @@
                             Margin="24"
                             HeightRequest="200"
                             WidthRequest="200">
-                        <ffimageloading:CachedImage.Transformations>
-                            <fftransformations:CircleTransformation />
-                        </ffimageloading:CachedImage.Transformations>
-                    </ffimageloading:CachedImage>
-                    <Label Text="{Binding Name}" 
+                            <ffimageloading:CachedImage.Transformations>
+                                <fftransformations:CircleTransformation />
+                            </ffimageloading:CachedImage.Transformations>
+                        </ffimageloading:CachedImage>
+                        <Label Text="{Binding Name}" 
                            TextColor="Black"
-                           FontSize="Large"
+                           FontSize="25"
                            FontAttributes="Bold"
                            HorizontalOptions="Center"
                            LineBreakMode="TailTruncation"
                            MaxLines="2" />
-                    <Label Text="Top Tracks"
+                        <Label Text="Top Tracks"
                            TextColor="Black"
                            Margin="0, 8"
                            FontSize="20"
                            FontAttributes="Bold"
                            HorizontalOptions="Start" />
-                    <ActivityIndicator IsVisible="{Binding IsLoading}"
+                        <ActivityIndicator IsVisible="{Binding IsLoading}"
                            IsRunning="{Binding IsLoading}"
                            IsEnabled="{Binding IsLoading}"
                            Margin="0, 15" />
-                </StackLayout>
-            </ListView.Header>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <templates:ItemTrack />
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                    </StackLayout>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <templates:ItemTrack />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout
+                BackgroundColor="#c7c7c7"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="EndAndExpand"
+                Margin="-1"
+                IsVisible="{Binding IsOffline}"
+                IsEnabled="{Binding IsOffline}">
+                <Label Text="No Internet connection" TextColor="Black" HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+        </StackLayout>
     </ScrollView>
 </ContentPage>

@@ -4,9 +4,11 @@ namespace Spotify.Utils
 {
     public class Network
     {
-        public static bool IsConnected()
+        public bool IsConnected()
         {
             return CrossConnectivity.Current.IsConnected;
         }
+
+        public Network() { }
     }
 }

@@ -11,11 +11,20 @@ namespace Spotify
         public App()
         {
             InitializeComponent();
-
-            MainPage = new NavigationPage(new LoginPage())
+            if (Current.Properties.ContainsKey("Email"))
             {
-                BarTextColor = Color.Black
-            };
+                MainPage = new NavigationPage(new HomePage())
+                {
+                    BarTextColor = Color.Black
+                };
+            }
+            else
+            {
+                MainPage = new NavigationPage(new LoginPage())
+                {
+                    BarTextColor = Color.Black
+                };
+            }
         }
 
         protected override void OnStart()

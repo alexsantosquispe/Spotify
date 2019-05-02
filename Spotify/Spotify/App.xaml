@@ -1,8 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:themes="clr-namespace:Spotify.Themes"
              x:Class="Spotify.App">
     <Application.Resources>
-
+        <ResourceDictionary MergedWith="themes:LightTheme">
+            <Style TargetType="NavigationPage">
+                <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}" />
+                <Setter Property="BarTextColor" Value="{DynamicResource TitleColor}"/>
+            </Style>
+            <Style x:Key="BackgroundPage" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundPage}"/>
+            </Style>
+            <Style x:Key="LoginButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{DynamicResource GreenColor}" />
+                <Setter Property="TextColor" Value="{DynamicResource PrimaryColor}" />
+            </Style>
+            <Style x:Key="Title" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource TitleColor}"/>
+            </Style>
+            <Style x:Key="SubTitle" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource SubTitleColor}"/>
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

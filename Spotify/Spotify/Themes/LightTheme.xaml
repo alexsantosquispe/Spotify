@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Spotify.Themes.LightTheme">
+    <Color x:Key="PrimaryColor">#FFFFFF</Color>
+    <Color x:Key="PrimaryDarkColor">#C7C7C7</Color>
+    <Color x:Key="GreenColor">#1DB954</Color>
+    <Color x:Key="BackgroundPage">#FAFAFA</Color>
+    <Color x:Key="TitleColor">#000000</Color>
+    <Color x:Key="SubTitleColor">#808080</Color>
+    <x:String x:Key="LogoSpotify">"Spotify_Logo_RGB_Black.png"</x:String>
+</ResourceDictionary>
