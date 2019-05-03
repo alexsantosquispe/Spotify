@@ -8,7 +8,7 @@ using System;
 
 namespace Spotify.ViewModel
 {
-    public class ArtistViewModel : BaseViewModel
+    public class HomeViewModel : BaseViewModel
     {
         private readonly SpotifyAPI _spotifyAPI = new SpotifyAPI();
 
@@ -38,19 +38,14 @@ namespace Spotify.ViewModel
 
         public ICommand SearchArtistsCommand { get; private set; }
 
-        public ArtistViewModel()
-        {
-            SearchArtistsCommand = new Command(async () => await _SearchArtists(SearchText), () => !IsLoading);
-        }
-
         public async Task _SearchArtists(string query)
         {
             try
             {
                 IsLoading = true;
                 var artistList = await _spotifyAPI.GetArtists(query.ToLower());
-                if (artistList.Count > 0)
-                {
+                if (artistList != null && artistList.Count > 0)
+                {                    
                     Artists.Clear();
                     foreach (Artist artist in artistList)
                     {
@@ -64,6 +59,11 @@ namespace Spotify.ViewModel
                 Console.WriteLine("Error Populate Artists");
                 Console.WriteLine(e.Message);
             }
+        }
+
+        public HomeViewModel()
+        {
+            SearchArtistsCommand = new Command(async () => await _SearchArtists(SearchText), () => !IsLoading);
         }
     }
 }

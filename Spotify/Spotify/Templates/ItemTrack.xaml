@@ -7,7 +7,7 @@
         <StackLayout Orientation="Horizontal" Padding="0">
             <ffimageloading:CachedImage 
                 Source="{Binding Album.AlbumImage.Url}"
-                LoadingPlaceholder="user_loading.png"
+                LoadingPlaceholder="track.png"
                 LoadingDelay="50"
                 HorizontalOptions="Start"
                 VerticalOptions="FillAndExpand"
