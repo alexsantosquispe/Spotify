@@ -32,15 +32,6 @@
           "lib/Xamarin.iOS10/System.Net.Http.Primitives.dll": {}
         }
       },
-      "modernhttpclient/2.4.2": {
-        "type": "package",
-        "compile": {
-          "lib/Xamarin.iOS10/ModernHttpClient.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS10/ModernHttpClient.dll": {}
-        }
-      },
       "Newtonsoft.Json/12.0.2": {
         "type": "package",
         "compile": {
@@ -298,47 +289,6 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Forms.Pages/2.3.0.38-pre2": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "6.0.4",
-          "Xamarin.Forms": "2.3.0.38-pre2",
-          "modernhttpclient": "2.4.2"
-        },
-        "compile": {
-          "lib/Xamarin.iOS10/Xamarin.Forms.Pages.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS10/Xamarin.Forms.Pages.dll": {}
-        }
-      },
-      "Xamarin.Forms.Theme.Base/1.0.0.43-pre1": {
-        "type": "package",
-        "dependencies": {
-          "Xamarin.Forms.Pages": "2.3.0.34-pre1"
-        },
-        "compile": {
-          "lib/Xamarin.iOS10/Xamarin.Forms.Theme.Base.dll": {},
-          "lib/Xamarin.iOS10/Xamarin.Forms.Theme.iOS.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS10/Xamarin.Forms.Theme.Base.dll": {},
-          "lib/Xamarin.iOS10/Xamarin.Forms.Theme.iOS.dll": {}
-        }
-      },
-      "Xamarin.Forms.Theme.Dark/1.0.0.43-pre1": {
-        "type": "package",
-        "dependencies": {
-          "Xamarin.Forms.Pages": "2.3.0.38-pre2",
-          "Xamarin.Forms.Theme.Base": "1.0.0.43-pre1"
-        },
-        "compile": {
-          "lib/Xamarin.iOS10/Xamarin.Forms.Theme.Dark.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS10/Xamarin.Forms.Theme.Dark.dll": {}
-        }
-      },
       "Spotify/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -350,8 +300,7 @@
           "Xamarin.FFImageLoading.Forms": "2.4.4.859",
           "Xamarin.FFImageLoading.Svg.Forms": "2.4.4.859",
           "Xamarin.FFImageLoading.Transformations": "2.4.4.859",
-          "Xamarin.Forms": "3.4.0.1008975",
-          "Xamarin.Forms.Theme.Dark": "1.0.0.43-pre1"
+          "Xamarin.Forms": "3.4.0.1008975"
         },
         "compile": {
           "bin/placeholder/Spotify.dll": {}
@@ -392,15 +341,6 @@
           "lib/Xamarin.iOS10/System.Net.Http.Primitives.dll": {}
         }
       },
-      "modernhttpclient/2.4.2": {
-        "type": "package",
-        "compile": {
-          "lib/Xamarin.iOS10/ModernHttpClient.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS10/ModernHttpClient.dll": {}
-        }
-      },
       "Newtonsoft.Json/12.0.2": {
         "type": "package",
         "compile": {
@@ -644,47 +584,6 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Forms.Pages/2.3.0.38-pre2": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "6.0.4",
-          "Xamarin.Forms": "2.3.0.38-pre2",
-          "modernhttpclient": "2.4.2"
-        },
-        "compile": {
-          "lib/Xamarin.iOS10/Xamarin.Forms.Pages.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS10/Xamarin.Forms.Pages.dll": {}
-        }
-      },
-      "Xamarin.Forms.Theme.Base/1.0.0.43-pre1": {
-        "type": "package",
-        "dependencies": {
-          "Xamarin.Forms.Pages": "2.3.0.34-pre1"
-        },
-        "compile": {
-          "lib/Xamarin.iOS10/Xamarin.Forms.Theme.Base.dll": {},
-          "lib/Xamarin.iOS10/Xamarin.Forms.Theme.iOS.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS10/Xamarin.Forms.Theme.Base.dll": {},
-          "lib/Xamarin.iOS10/Xamarin.Forms.Theme.iOS.dll": {}
-        }
-      },
-      "Xamarin.Forms.Theme.Dark/1.0.0.43-pre1": {
-        "type": "package",
-        "dependencies": {
-          "Xamarin.Forms.Pages": "2.3.0.38-pre2",
-          "Xamarin.Forms.Theme.Base": "1.0.0.43-pre1"
-        },
-        "compile": {
-          "lib/Xamarin.iOS10/Xamarin.Forms.Theme.Dark.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS10/Xamarin.Forms.Theme.Dark.dll": {}
-        }
-      },
       "Spotify/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -696,8 +595,7 @@
           "Xamarin.FFImageLoading.Forms": "2.4.4.859",
           "Xamarin.FFImageLoading.Svg.Forms": "2.4.4.859",
           "Xamarin.FFImageLoading.Transformations": "2.4.4.859",
-          "Xamarin.Forms": "3.4.0.1008975",
-          "Xamarin.Forms.Theme.Dark": "1.0.0.43-pre1"
+          "Xamarin.Forms": "3.4.0.1008975"
         },
         "compile": {
           "bin/placeholder/Spotify.dll": {}
@@ -738,15 +636,6 @@
           "lib/Xamarin.iOS10/System.Net.Http.Primitives.dll": {}
         }
       },
-      "modernhttpclient/2.4.2": {
-        "type": "package",
-        "compile": {
-          "lib/Xamarin.iOS10/ModernHttpClient.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS10/ModernHttpClient.dll": {}
-        }
-      },
       "Newtonsoft.Json/12.0.2": {
         "type": "package",
         "compile": {
@@ -990,47 +879,6 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Forms.Pages/2.3.0.38-pre2": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "6.0.4",
-          "Xamarin.Forms": "2.3.0.38-pre2",
-          "modernhttpclient": "2.4.2"
-        },
-        "compile": {
-          "lib/Xamarin.iOS10/Xamarin.Forms.Pages.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS10/Xamarin.Forms.Pages.dll": {}
-        }
-      },
-      "Xamarin.Forms.Theme.Base/1.0.0.43-pre1": {
-        "type": "package",
-        "dependencies": {
-          "Xamarin.Forms.Pages": "2.3.0.34-pre1"
-        },
-        "compile": {
-          "lib/Xamarin.iOS10/Xamarin.Forms.Theme.Base.dll": {},
-          "lib/Xamarin.iOS10/Xamarin.Forms.Theme.iOS.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS10/Xamarin.Forms.Theme.Base.dll": {},
-          "lib/Xamarin.iOS10/Xamarin.Forms.Theme.iOS.dll": {}
-        }
-      },
-      "Xamarin.Forms.Theme.Dark/1.0.0.43-pre1": {
-        "type": "package",
-        "dependencies": {
-          "Xamarin.Forms.Pages": "2.3.0.38-pre2",
-          "Xamarin.Forms.Theme.Base": "1.0.0.43-pre1"
-        },
-        "compile": {
-          "lib/Xamarin.iOS10/Xamarin.Forms.Theme.Dark.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS10/Xamarin.Forms.Theme.Dark.dll": {}
-        }
-      },
       "Spotify/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1042,8 +890,7 @@
           "Xamarin.FFImageLoading.Forms": "2.4.4.859",
           "Xamarin.FFImageLoading.Svg.Forms": "2.4.4.859",
           "Xamarin.FFImageLoading.Transformations": "2.4.4.859",
-          "Xamarin.Forms": "3.4.0.1008975",
-          "Xamarin.Forms.Theme.Dark": "1.0.0.43-pre1"
+          "Xamarin.Forms": "3.4.0.1008975"
         },
         "compile": {
           "bin/placeholder/Spotify.dll": {}
@@ -1084,15 +931,6 @@
           "lib/Xamarin.iOS10/System.Net.Http.Primitives.dll": {}
         }
       },
-      "modernhttpclient/2.4.2": {
-        "type": "package",
-        "compile": {
-          "lib/Xamarin.iOS10/ModernHttpClient.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS10/ModernHttpClient.dll": {}
-        }
-      },
       "Newtonsoft.Json/12.0.2": {
         "type": "package",
         "compile": {
@@ -1336,47 +1174,6 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Forms.Pages/2.3.0.38-pre2": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "6.0.4",
-          "Xamarin.Forms": "2.3.0.38-pre2",
-          "modernhttpclient": "2.4.2"
-        },
-        "compile": {
-          "lib/Xamarin.iOS10/Xamarin.Forms.Pages.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS10/Xamarin.Forms.Pages.dll": {}
-        }
-      },
-      "Xamarin.Forms.Theme.Base/1.0.0.43-pre1": {
-        "type": "package",
-        "dependencies": {
-          "Xamarin.Forms.Pages": "2.3.0.34-pre1"
-        },
-        "compile": {
-          "lib/Xamarin.iOS10/Xamarin.Forms.Theme.Base.dll": {},
-          "lib/Xamarin.iOS10/Xamarin.Forms.Theme.iOS.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS10/Xamarin.Forms.Theme.Base.dll": {},
-          "lib/Xamarin.iOS10/Xamarin.Forms.Theme.iOS.dll": {}
-        }
-      },
-      "Xamarin.Forms.Theme.Dark/1.0.0.43-pre1": {
-        "type": "package",
-        "dependencies": {
-          "Xamarin.Forms.Pages": "2.3.0.38-pre2",
-          "Xamarin.Forms.Theme.Base": "1.0.0.43-pre1"
-        },
-        "compile": {
-          "lib/Xamarin.iOS10/Xamarin.Forms.Theme.Dark.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS10/Xamarin.Forms.Theme.Dark.dll": {}
-        }
-      },
       "Spotify/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1388,8 +1185,7 @@
           "Xamarin.FFImageLoading.Forms": "2.4.4.859",
           "Xamarin.FFImageLoading.Svg.Forms": "2.4.4.859",
           "Xamarin.FFImageLoading.Transformations": "2.4.4.859",
-          "Xamarin.Forms": "3.4.0.1008975",
-          "Xamarin.Forms.Theme.Dark": "1.0.0.43-pre1"
+          "Xamarin.Forms": "3.4.0.1008975"
         },
         "compile": {
           "bin/placeholder/Spotify.dll": {}
@@ -1582,28 +1378,6 @@
         "lib/wpa81/System.Net.Http.Primitives.xml",
         "microsoft.net.http.2.2.29.nupkg.sha512",
         "microsoft.net.http.nuspec"
-      ]
-    },
-    "modernhttpclient/2.4.2": {
-      "sha512": "Srkrjz2wBCh7af+AGqpPkJ3FSSFSruzg9mHVwwXiklf9gx2L1Ss2M+p2Mf4Fw17AOe6yPuJwdu4AAoslc6zP+w==",
-      "type": "package",
-      "path": "modernhttpclient/2.4.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/ModernHttpClient-2.4.1.zip",
-        "lib/MonoAndroid/ModernHttpClient.dll",
-        "lib/MonoAndroid/ModernHttpClient.dll.mdb",
-        "lib/MonoAndroid/OkHttp.dll",
-        "lib/MonoTouch/ModernHttpClient.dll",
-        "lib/MonoTouch/ModernHttpClient.dll.mdb",
-        "lib/Portable-Net45+WinRT45+WP8+WPA81/ModernHttpClient.dll",
-        "lib/Portable-Net45+WinRT45+WP8+WPA81/ModernHttpClient.dll.mdb",
-        "lib/Xamarin.iOS10/ModernHttpClient.dll",
-        "lib/Xamarin.iOS10/ModernHttpClient.dll.mdb",
-        "lib/modernhttpclient.2.4.1.nupkg",
-        "modernhttpclient.2.4.2.nupkg.sha512",
-        "modernhttpclient.nuspec"
       ]
     },
     "Newtonsoft.Json/12.0.2": {
@@ -2318,55 +2092,6 @@
         "lib/uap10.0/Xamarin.Forms.Xaml.xml",
         "xamarin.forms.3.4.0.1008975.nupkg.sha512",
         "xamarin.forms.nuspec"
-      ]
-    },
-    "Xamarin.Forms.Pages/2.3.0.38-pre2": {
-      "sha512": "LKWntv0PZDWzAYT35JI83EIRj1I4M9y1q2fU8hyV67EF12TNDNHheH18s0NllWixgg/bcJOu80XpQPNQ3F8kSg==",
-      "type": "package",
-      "path": "xamarin.forms.pages/2.3.0.38-pre2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/MonoAndroid10/Xamarin.Forms.Pages.dll",
-        "lib/MonoTouch10/Xamarin.Forms.Pages.dll",
-        "lib/WP80/Xamarin.Forms.Pages.dll",
-        "lib/Xamarin.iOS10/Xamarin.Forms.Pages.dll",
-        "lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Xamarin.Forms.Pages.dll",
-        "lib/uap10.0/Xamarin.Forms.Pages.dll",
-        "lib/win81/Xamarin.Forms.Pages.dll",
-        "lib/wpa81/Xamarin.Forms.Pages.dll",
-        "xamarin.forms.pages.2.3.0.38-pre2.nupkg.sha512",
-        "xamarin.forms.pages.nuspec"
-      ]
-    },
-    "Xamarin.Forms.Theme.Base/1.0.0.43-pre1": {
-      "sha512": "nmklKhIbXkKn0dY6VjXFCCacOBIgwgVTXS/DDch9R4im3AUOgRYwoetuFwJOh1iXGw4cwLh2bkxNbfTbAihghA==",
-      "type": "package",
-      "path": "xamarin.forms.theme.base/1.0.0.43-pre1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/MonoAndroid10/Xamarin.Forms.Theme.Android.dll",
-        "lib/MonoAndroid10/Xamarin.Forms.Theme.Base.dll",
-        "lib/Xamarin.iOS10/Xamarin.Forms.Theme.Base.dll",
-        "lib/Xamarin.iOS10/Xamarin.Forms.Theme.iOS.dll",
-        "lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Xamarin.Forms.Theme.Base.dll",
-        "xamarin.forms.theme.base.1.0.0.43-pre1.nupkg.sha512",
-        "xamarin.forms.theme.base.nuspec"
-      ]
-    },
-    "Xamarin.Forms.Theme.Dark/1.0.0.43-pre1": {
-      "sha512": "QVCx7d+A7VdfUBJwNOpLWquaXzxiP7ZdDVHMiv0FViqWx6Sp38XMLbFI36rZR8LularQSvmrXymA0d142HbD3g==",
-      "type": "package",
-      "path": "xamarin.forms.theme.dark/1.0.0.43-pre1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/MonoAndroid10/Xamarin.Forms.Theme.Dark.dll",
-        "lib/Xamarin.iOS10/Xamarin.Forms.Theme.Dark.dll",
-        "lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Xamarin.Forms.Theme.Dark.dll",
-        "xamarin.forms.theme.dark.1.0.0.43-pre1.nupkg.sha512",
-        "xamarin.forms.theme.dark.nuspec"
       ]
     },
     "Spotify/1.0.0": {

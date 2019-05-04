@@ -3,12 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              NavigationPage.HasNavigationBar="False"
+             StyleClass="NavigationPage"
              x:Class="Spotify.Views.LoginPage">
 
     <ScrollView>
         <StackLayout Padding="24, 8" Style="{StaticResource BackgroundPage}">
             <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                <ffimageloading:CachedImage 
+                <ffimageloading:CachedImage
                     Source="{Binding Logo}"
                     VerticalOptions="Center"
                     WidthRequest="200"

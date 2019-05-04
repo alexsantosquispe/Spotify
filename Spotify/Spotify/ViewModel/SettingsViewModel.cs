@@ -8,7 +8,7 @@ namespace Spotify.ViewModel
     {
         public ICommand LogoutCommand { get; private set; }
 
-        private readonly INavigation _navigation;        
+        private readonly INavigation _navigation;
 
         private string _emailUser;
 

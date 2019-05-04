@@ -2,7 +2,6 @@
 using System.Runtime.CompilerServices;
 using Plugin.Connectivity;
 using Spotify.Themes;
-using Xamarin.Forms;
 
 namespace Spotify.ViewModel
 {

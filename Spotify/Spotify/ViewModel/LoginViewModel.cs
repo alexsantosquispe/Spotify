@@ -94,7 +94,6 @@ namespace Spotify.ViewModel
             get { return _logo; }
             set { _logo = value; }
         }
-
         public ICommand OnLoginCommand { get; private set; }
 
         public void ValidateEmail()

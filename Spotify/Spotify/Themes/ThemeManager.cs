@@ -44,6 +44,6 @@ namespace Spotify.Themes
         private static void _SaveTheme(string theme)
         {
             Application.Current.Properties["Theme"] = theme;
-        } 
+        }
     }
 }

@@ -26,15 +26,15 @@
                 </ffimageloading:CachedImage>
                 <StackLayout Padding="16, 4" VerticalOptions="Center" Spacing="2">
                     <Label Text="{Binding EmailUser}"
-                        FontSize="Medium" 
-                        LineBreakMode="TailTruncation"
-                        MaxLines="2"
-                        Style="{StaticResource Title}" />
+                            FontSize="Medium" 
+                            LineBreakMode="TailTruncation"
+                            MaxLines="2"
+                            Style="{StaticResource Title}" />
                     <Label Text="Log out"
-                        FontSize="Small" 
-                        LineBreakMode="TailTruncation"
-                        MaxLines="2"
-                        Style="{StaticResource SubTitle}" />
+                            FontSize="Small" 
+                            LineBreakMode="TailTruncation"
+                            MaxLines="2"
+                            Style="{StaticResource SubTitle}" />
                 </StackLayout>
             </StackLayout>
             <!--#endregion-->
@@ -47,5 +47,4 @@
             <!--#endregion-->
         </StackLayout>
     </ScrollView>
-    
 </ContentPage>
