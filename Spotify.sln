@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spotify.Android", "Spotify\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spotify.iOS", "Spotify\Spotify.iOS\Spotify.iOS.csproj", "{A3F48E26-E8EE-4095-B967-900C71674B29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spotify", "Spotify\Spotify\Spotify.csproj", "{75A72A8E-D42B-44A8-A8BA-B6E643320506}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spotify", "Spotify\Spotify\Spotify.csproj", "{75A72A8E-D42B-44A8-A8BA-B6E643320506}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

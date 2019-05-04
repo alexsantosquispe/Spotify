@@ -6,6 +6,10 @@ namespace Spotify.ViewModel
 {
     public class SettingsViewModel : BaseViewModel
     {
+        public ICommand LogoutCommand { get; private set; }
+
+        private readonly INavigation _navigation;
+
         private string _emailUser;
 
         public string EmailUser
@@ -17,42 +21,6 @@ namespace Spotify.ViewModel
                 OnPropertyChanged("EmailUser");
             }
         }
-
-        private string _theme;
-
-        public string Theme
-        {
-            get { return _theme; }
-            set
-            {
-                _theme = value;
-                OnPropertyChanged("Theme");
-            }
-        }
-
-        private bool _status;
-
-        public bool Status
-        {
-            get { return _status; }
-            set
-            {
-                _status = value;
-                OnPropertyChanged("Status");
-            }
-        }
-
-        public ICommand LogoutCommand { get; private set; }
-
-        private readonly INavigation _navigation;
-
-        public void SetCurrentEmailUser()
-        {
-            if (Application.Current.Properties.ContainsKey("Email"))
-            {
-                EmailUser = Application.Current.Properties["Email"].ToString();
-            }
-        }        
 
         public async void GoToLoginPage()
         {
@@ -72,13 +40,15 @@ namespace Spotify.ViewModel
         public void Logout()
         {
             RemoveSession();
+            SetCurrentTheme();
             GoToLoginPage();
         }
 
         public SettingsViewModel(INavigation navigation)
         {
             _navigation = navigation;
-            SetCurrentEmailUser();
+            EmailUser = GetCurrentEmailUser();
+            Theme = GetCurrentTheme();
             LogoutCommand = new Command(Logout);
         }
     }

@@ -9,8 +9,8 @@
     <ScrollView>
         <StackLayout Padding="24, 8" Style="{StaticResource BackgroundPage}">
             <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                <ffimageloading:CachedImage 
-                    Source="Spotify_Logo_RGB_Black.png"
+                <ffimageloading:CachedImage
+                    Source="{Binding Logo}"
                     VerticalOptions="Center"
                     WidthRequest="200"
                     DownsampleToViewSize="true" />
@@ -19,23 +19,12 @@
             <StackLayout VerticalOptions="EndAndExpand" Spacing="4" Padding="32">
                 <StackLayout>
                     <Label Text="Email" FontSize="15" Style="{StaticResource Title}" />
-                    <Entry Text="{Binding EmailText}"
-                        Keyboard="Email"
-                        Placeholder="Entre your email" />
-                    <Label Text="{Binding EmailErrorMessage}"
-                        TextColor="Red"
-                        Margin="0, -8, 0, 0"
-                        IsVisible="{Binding EmailError}"
-                        IsEnabled="{Binding EmailError}" />
+                    <Entry Text="{Binding EmailText}" Keyboard="Email" Placeholder="Entre your email" Style="{StaticResource EntryText}"/>
+                    <Label Text="{Binding EmailErrorMessage}" TextColor="Red" Margin="0, -8, 0, 0" IsVisible="{Binding EmailError}" IsEnabled="{Binding EmailError}" />
+                    
                     <Label Text="Password" FontSize="15" Style="{StaticResource Title}" />
-                    <Entry Text="{Binding PasswordText}"
-                        IsPassword="true"
-                        Placeholder="*********" />
-                    <Label Text="{Binding PasswordErrorMessage}"
-                        TextColor="Red"
-                        Margin="0, -8, 0, 0"
-                        IsVisible="{Binding PasswordError}"
-                        IsEnabled="{Binding PasswordError}" />
+                    <Entry Text="{Binding PasswordText}" IsPassword="true" Placeholder="*********"  Style="{StaticResource EntryText}"/>
+                    <Label Text="{Binding PasswordErrorMessage}" TextColor="Red" Margin="0, -8, 0, 0" IsVisible="{Binding PasswordError}" IsEnabled="{Binding PasswordError}" />
                 </StackLayout>
                 <Button Text="Login"                    
                     CornerRadius="6" 

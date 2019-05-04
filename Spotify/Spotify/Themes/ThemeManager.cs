@@ -1,48 +1,49 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace Spotify.Themes
 {
     public class ThemeManager
     {
-        public enum Theme
-        {
-            Light,
-            Dark
-        }
-
-        public static void ChangeTheme(Theme theme)
+        public static void ChangeTheme(string theme)
         {
             var mergeDictionaries = Application.Current.Resources.MergedDictionaries;
             if (mergeDictionaries != null)
             {
                 mergeDictionaries.Clear();
+                _SaveTheme(theme);
                 switch (theme)
                 {
-                    case Theme.Light:
-                        mergeDictionaries.Add(new LightTheme());
+                    case "Light":
+                        mergeDictionaries.Add(new Light());
                         break;
-                    case Theme.Dark:
-                        mergeDictionaries.Add(new DarkTheme());
+                    case "Dark":
+                        mergeDictionaries.Add(new Dark());
                         break;
                     default:
-                        mergeDictionaries.Add(new LightTheme());
+                        mergeDictionaries.Add(new Light());
                         break;
                 }
             }
         }
 
         public static void LoadTheme()
-        {
-            Theme currentTheme = CurrentTheme();
-            ChangeTheme(currentTheme);
+        {            
+            ChangeTheme(_GetThemeSaved());
         }
 
-        private static Theme CurrentTheme()
+        private static string _GetThemeSaved()
         {
-            return default(Theme);
+            string defaultTheme = "Light";
+            if (Application.Current.Properties.ContainsKey("Theme"))
+            {
+                defaultTheme = Application.Current.Properties["Theme"].ToString();
+            }
+            return defaultTheme;
+        }
+
+        private static void _SaveTheme(string theme)
+        {
+            Application.Current.Properties["Theme"] = theme;
         }
     }
 }

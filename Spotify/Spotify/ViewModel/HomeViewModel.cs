@@ -36,6 +36,14 @@ namespace Spotify.ViewModel
             }
         }
 
+        private string _icon;
+
+        public string Icon
+        {
+            get { return _icon; }
+            set { _icon = value; }
+        }
+
         public ICommand SearchArtistsCommand { get; private set; }
 
         public async Task _SearchArtists(string query)
@@ -63,6 +71,7 @@ namespace Spotify.ViewModel
 
         public HomeViewModel()
         {
+            Icon = "settings_" + GetCurrentTheme().ToLower() + ".png";
             SearchArtistsCommand = new Command(async () => await _SearchArtists(SearchText), () => !IsLoading);
         }
     }

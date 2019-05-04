@@ -2,9 +2,9 @@
 
 namespace Spotify.Themes
 {
-	public partial class LightTheme : ResourceDictionary
+	public partial class Light : ResourceDictionary
     {
-		public LightTheme ()
+		public Light ()
 		{
 			InitializeComponent ();
 		}

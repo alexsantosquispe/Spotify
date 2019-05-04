@@ -2,13 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
-             Title="Settings"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"             
+             NavigationPage.HasNavigationBar="False"
              x:Class="Spotify.Views.SettingsPage">
     <ScrollView>
-        <StackLayout Padding="16">
+        <StackLayout Padding="16" Style="{StaticResource BackgroundPage}">
+            <Label Text="Settings" FontSize="26" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" Margin="16" Style="{StaticResource Title}" />
             <!--#region session-->
-            <Label Text="Accout" TextColor="#1DB954" FontAttributes="Bold" />
+            <Label Text="Accout" FontAttributes="Bold" Style="{StaticResource AccentText}"/>
             <StackLayout Orientation="Horizontal">
                 <StackLayout.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding LogoutCommand}"/>
@@ -24,27 +25,24 @@
                     </ffimageloading:CachedImage.Transformations>
                 </ffimageloading:CachedImage>
                 <StackLayout Padding="16, 4" VerticalOptions="Center" Spacing="2">
-                    <Label Text="{Binding EmailUser}" 
-                       TextColor="#000"
-                       FontSize="Medium" 
-                       LineBreakMode="TailTruncation"
-                       MaxLines="2" />
+                    <Label Text="{Binding EmailUser}"
+                            FontSize="Medium" 
+                            LineBreakMode="TailTruncation"
+                            MaxLines="2"
+                            Style="{StaticResource Title}" />
                     <Label Text="Log out"
-                       TextColor="Gray"
-                       FontSize="Small" 
-                       LineBreakMode="TailTruncation"
-                       MaxLines="2" />
+                            FontSize="Small" 
+                            LineBreakMode="TailTruncation"
+                            MaxLines="2"
+                            Style="{StaticResource SubTitle}" />
                 </StackLayout>
             </StackLayout>
             <!--#endregion-->
             <!--#region theme-->
             <Label Text="Appearance" TextColor="#1DB954" FontAttributes="Bold" Margin="0, 8, 0, 0" />
-            <StackLayout Orientation="Horizontal">
-                <StackLayout Orientation="Vertical" HorizontalOptions="Start" Spacing="2">
-                    <Label Text="Theme" TextColor="Black" LineBreakMode="WordWrap" />
-                    <Label Text="Light mode" TextColor="Gray" LineBreakMode="WordWrap" />
-                </StackLayout>
-                <Switch IsToggled="{Binding Status}" HorizontalOptions="EndAndExpand" />
+            <StackLayout HorizontalOptions="Start" Spacing="2">
+                <Label Text="Theme" LineBreakMode="WordWrap" Style="{StaticResource Title}" />
+                <Label Text="{Binding Theme}" LineBreakMode="WordWrap" Style="{StaticResource SubTitle}" />
             </StackLayout>
             <!--#endregion-->
         </StackLayout>

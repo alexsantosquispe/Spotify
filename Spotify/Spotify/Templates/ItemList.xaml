@@ -19,11 +19,7 @@
                 </ffimageloading:CachedImage.Transformations>
             </ffimageloading:CachedImage>
             <StackLayout Padding="16, 4" VerticalOptions="Center">
-                <Label Text="{Binding Name}" 
-                   TextColor="Black" 
-                   FontSize="Medium" 
-                   LineBreakMode="TailTruncation"
-                   MaxLines="2" />
+                <Label Text="{Binding Name}" FontSize="Medium" LineBreakMode="TailTruncation" MaxLines="2" Style="{StaticResource Title}"/>
             </StackLayout>
         </StackLayout>
     </Frame>

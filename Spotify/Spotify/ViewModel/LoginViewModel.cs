@@ -87,6 +87,13 @@ namespace Spotify.ViewModel
             }
         }
 
+        private string _logo;
+
+        public string Logo
+        {
+            get { return _logo; }
+            set { _logo = value; }
+        }
         public ICommand OnLoginCommand { get; private set; }
 
         public void ValidateEmail()
@@ -144,6 +151,7 @@ namespace Spotify.ViewModel
         public LoginViewModel(INavigation navigation)
         {
             _navigation = navigation;
+            Logo = "spotify_logo_" + GetCurrentTheme().ToLower() + ".png";
             OnLoginCommand = new Command(OnLogin);
         }
     }
