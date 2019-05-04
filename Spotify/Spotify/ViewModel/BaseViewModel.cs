@@ -1,18 +1,48 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Plugin.Connectivity;
+using Spotify.Themes;
+using Xamarin.Forms;
 
 namespace Spotify.ViewModel
 {
     public abstract class BaseViewModel : INotifyPropertyChanged
     {
-        public BaseViewModel() { }
-
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }        
+        }
+
+        public string GetCurrentTheme()
+        {
+            string theme = "";
+            if (Application.Current.Properties.ContainsKey("Theme"))
+            {
+                theme = Application.Current.Properties["Theme"].ToString();
+            }
+            return theme;
+        }
+
+        public void SetCurrentTheme()
+        {
+            if (Theme == "Dark")
+            {
+                ThemeManager.ChangeTheme("Light");
+                Theme = "Light";
+            }            
+        }
+
+        public string GetCurrentEmailUser()
+        {
+            string emailUser = "";
+            if (Application.Current.Properties.ContainsKey("Email"))
+            {
+                emailUser = Application.Current.Properties["Email"].ToString();
+            }
+            return emailUser;
+        }
 
         private bool _isLoading = false;
 
@@ -24,6 +54,37 @@ namespace Spotify.ViewModel
                 _isLoading = value;
                 OnPropertyChanged("IsLoading");
             }
+        }
+        private bool _isOffline = !CrossConnectivity.Current.IsConnected;
+
+        public bool IsOffline
+        {
+            get { return _isOffline; }
+            set
+            {
+                _isOffline = value;
+                OnPropertyChanged("IsOffline");
+            }
+        }
+
+        private string _theme;
+
+        public string Theme
+        {
+            get { return _theme; }
+            set
+            {
+                _theme = value;
+                OnPropertyChanged("Theme");
+            }
+        }
+
+        public BaseViewModel()
+        {
+            CrossConnectivity.Current.ConnectivityChanged += (sender, args) =>
+            {
+                IsOffline = !args.IsConnected;
+            };
         }
     }
 }

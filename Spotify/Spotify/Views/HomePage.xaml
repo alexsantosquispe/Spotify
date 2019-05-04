@@ -3,28 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:templates="clr-namespace:Spotify.Templates"
              x:Class="Spotify.Views.HomePage"
-             NavigationPage.HasNavigationBar="False"
-             Title="Rock">
-    <StackLayout>
-        <Frame BackgroundColor="White" CornerRadius="6" Padding="8" HasShadow="False">
-            <SearchBar x:Name="searchArtist"
-                       Placeholder="Search Artists"
-                       SearchCommand="{Binding SearchArtistsCommand}"
-                       Text="{Binding SearchText}"                     
-                       TextColor="Black"
-                       HeightRequest="48" />
-        </Frame>
-        <ActivityIndicator IsVisible="{Binding IsLoading}"
-                           IsRunning="{Binding IsLoading}"
-                           IsEnabled="{Binding IsLoading}"
-                           Margin="0, 20" />
+             NavigationPage.HasNavigationBar="False">
+    <StackLayout Padding="0" Style="{StaticResource BackgroundPage}">
         <ListView x:Name="ArtistList"
                   ItemsSource="{Binding Artists}"
                   SelectedItem="{Binding SelectedArtist}"
                   CachingStrategy="RecycleElement"
-                  SeparatorVisibility="None"
-                  Margin="8, 4"
+                  SeparatorVisibility="None"                  
                   RowHeight="70">
+            <ListView.Header>
+                <StackLayout Margin="0, 0, 0, 8">
+                    <Image x:Name="ima" Source="{Binding Icon}" WidthRequest="25" HeightRequest="25" HorizontalOptions="EndAndExpand" Margin="16">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="GoToSettings" NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Artists" FontSize="26" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" Margin="0, -16, 0, 8" Style="{StaticResource Title}" />
+                    <SearchBar Placeholder="Search Artists"
+                               SearchCommand="{Binding SearchArtistsCommand}"
+                               Text="{Binding SearchText}"
+                               Style="{StaticResource SearchBar}"
+                               HeightRequest="48" />
+                    <ActivityIndicator IsVisible="{Binding IsLoading}" IsRunning="{Binding IsLoading}" IsEnabled="{Binding IsLoading}" Margin="0, 20" />
+                </StackLayout>
+            </ListView.Header>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -33,5 +35,14 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <StackLayout
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="EndAndExpand"
+            Margin="-1"
+            IsVisible="{Binding IsOffline}"
+            IsEnabled="{Binding IsOffline}"
+            Style="{StaticResource OfflineLayout}">
+            <Label Text="No Internet connection" HorizontalOptions="CenterAndExpand" Style="{StaticResource OfflineText}"/>
+        </StackLayout>
     </StackLayout>
 </ContentPage>

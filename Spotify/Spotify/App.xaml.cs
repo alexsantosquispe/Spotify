@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Spotify.Views;
+using Spotify.Themes;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Spotify
@@ -11,11 +12,15 @@ namespace Spotify
         public App()
         {
             InitializeComponent();
-
-            MainPage = new NavigationPage(new LoginPage())
+            ThemeManager.LoadTheme();
+            if (Current.Properties.ContainsKey("Email"))
             {
-                BarTextColor = Color.Black
-            };
+                MainPage = new NavigationPage(new HomePage());
+            }
+            else
+            {
+                MainPage = new NavigationPage(new LoginPage());
+            }
         }
 
         protected override void OnStart()

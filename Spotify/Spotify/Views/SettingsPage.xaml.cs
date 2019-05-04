@@ -1,17 +1,16 @@
-﻿using System;
+﻿using Spotify.ViewModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Spotify.ViewModel;
 
 namespace Spotify.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LoginPage : ContentPage
+    public partial class SettingsPage : ContentPage
     {
-        public LoginPage()
+        public SettingsPage()
         {
             InitializeComponent();
-            BindingContext = new LoginViewModel(Navigation);
+            BindingContext = new SettingsViewModel(Navigation);
         }
     }
 }

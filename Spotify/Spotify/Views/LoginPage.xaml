@@ -1,43 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:custom="clr-namespace:Spotify.Controls"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              NavigationPage.HasNavigationBar="False"
+             StyleClass="NavigationPage"
              x:Class="Spotify.Views.LoginPage">
 
-    <StackLayout Padding="24, 8">
-        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-            <Image Source="Spotify_Logo_RGB_Black.png" WidthRequest="200" VerticalOptions="Center" />
-        </StackLayout>
-        <Label Text="Login and enjoy!" FontSize="30" FontAttributes="Bold" TextColor="#000" HorizontalOptions="CenterAndExpand" />
-        <StackLayout VerticalOptions="EndAndExpand" Spacing="4" Padding="32">
-            <StackLayout>
-                <Label Text="Email" TextColor="Black" FontSize="15" />
-                <Entry Text="{Binding EmailText}"
-                       Keyboard="Email"
-                       Placeholder="Entre your email" />
-                <Label Text="{Binding EmailErrorMessage}"
-                       TextColor="Red"
-                       Margin="0, -8, 0, 0"
-                       IsVisible="{Binding EmailError}"
-                       IsEnabled="{Binding EmailError}" />
-                <Label Text="Password" TextColor="Black" FontSize="15" />
-                <Entry Text="{Binding PasswordText}"
-                       IsPassword="true"
-                       Placeholder="*********" />
-                <Label Text="{Binding PasswordErrorMessage}"
-                       TextColor="Red"
-                       Margin="0, -8, 0, 0"
-                       IsVisible="{Binding PasswordError}"
-                       IsEnabled="{Binding PasswordError}" />
+    <ScrollView>
+        <StackLayout Padding="24, 8" Style="{StaticResource BackgroundPage}">
+            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <ffimageloading:CachedImage
+                    Source="{Binding Logo}"
+                    VerticalOptions="Center"
+                    WidthRequest="200"
+                    DownsampleToViewSize="true" />
             </StackLayout>
-            <Button Text="Login"
-                    TextColor="White"
-                    BackgroundColor="#1DB954"
+            <Label Text="Login and enjoy!" FontSize="30" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" Style="{StaticResource Title}" />
+            <StackLayout VerticalOptions="EndAndExpand" Spacing="4" Padding="32">
+                <StackLayout>
+                    <Label Text="Email" FontSize="15" Style="{StaticResource Title}" />
+                    <Entry Text="{Binding EmailText}" Keyboard="Email" Placeholder="Entre your email" Style="{StaticResource EntryText}"/>
+                    <Label Text="{Binding EmailErrorMessage}" TextColor="Red" Margin="0, -8, 0, 0" IsVisible="{Binding EmailError}" IsEnabled="{Binding EmailError}" />
+                    
+                    <Label Text="Password" FontSize="15" Style="{StaticResource Title}" />
+                    <Entry Text="{Binding PasswordText}" IsPassword="true" Placeholder="*********"  Style="{StaticResource EntryText}"/>
+                    <Label Text="{Binding PasswordErrorMessage}" TextColor="Red" Margin="0, -8, 0, 0" IsVisible="{Binding PasswordError}" IsEnabled="{Binding PasswordError}" />
+                </StackLayout>
+                <Button Text="Login"                    
                     CornerRadius="6" 
-                    Margin="0, 16" 
+                    Margin="0, 16"
+                    Style="{StaticResource LoginButton}"
                     Command="{Binding OnLoginCommand}" />
+            </StackLayout>
         </StackLayout>
-    </StackLayout>
+    </ScrollView>
 
 </ContentPage>
