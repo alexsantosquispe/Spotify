@@ -33,7 +33,7 @@ namespace Spotify.Themes
 
         private static string _GetThemeSaved()
         {
-            string defaultTheme = "Dark";
+            string defaultTheme = "Light";
             if (Application.Current.Properties.ContainsKey("Theme"))
             {
                 defaultTheme = Application.Current.Properties["Theme"].ToString();
