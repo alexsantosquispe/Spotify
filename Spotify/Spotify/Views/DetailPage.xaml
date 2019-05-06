@@ -4,7 +4,7 @@
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              xmlns:templates="clr-namespace:Spotify.Templates"
-             NavigationPage.HasNavigationBar="False"
+             NavigationPage.HasNavigationBar="True"
              x:Class="Spotify.Views.DetailPage">
     <StackLayout Style="{StaticResource BackgroundPage}">
         <ListView ItemsSource="{Binding Tracks}"
