@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "8db1f0079b7790f134d9ee5519a462d19843367f"
+    "signature": "8423dbdc340ff250cb9bbe830c8296108b59f5d8"
   },
   "compilationOptions": {},
   "targets": {
@@ -12,15 +12,13 @@
           "Microsoft.Net.Http": "2.2.29",
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "12.0.2",
+          "Plugin.FirebasePushNotification": "2.3.5",
           "Refit": "4.6.107",
           "Xam.Plugin.Connectivity": "3.2.0",
           "Xamarin.FFImageLoading.Forms": "2.4.4.859",
           "Xamarin.FFImageLoading.Svg.Forms": "2.4.4.859",
           "Xamarin.FFImageLoading.Transformations": "2.4.4.859",
-          "Xamarin.Forms": "3.4.0.1008975",
-          "Xamarin.Forms.Theme.Base": "1.0.0.43-pre1",
-          "Xamarin.Forms.Theme.Dark": "1.0.0.43-pre1",
-          "Xamarin.Forms.Theme.Light": "1.0.0.43-pre1"
+          "Xamarin.Forms": "3.4.0.1008975"
         },
         "runtime": {
           "Spotify.dll": {}
@@ -43,11 +41,6 @@
         }
       },
       "Microsoft.NETCore.Platforms/1.1.0": {},
-      "modernhttpclient/2.4.2": {
-        "runtime": {
-          "lib/Portable-Net45+WinRT45+WP8+WPA81/ModernHttpClient.dll": {}
-        }
-      },
       "NETStandard.Library/2.0.3": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
@@ -56,6 +49,15 @@
       "Newtonsoft.Json/12.0.2": {
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Plugin.FirebasePushNotification/2.3.5": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard1.0/Plugin.FirebasePushNotification.Abstractions.dll": {},
+          "lib/netstandard1.0/Plugin.FirebasePushNotification.dll": {}
         }
       },
       "Refit/4.6.107": {
@@ -127,42 +129,6 @@
           "lib/netstandard2.0/Xamarin.Forms.Platform.dll": {},
           "lib/netstandard2.0/Xamarin.Forms.Xaml.dll": {}
         }
-      },
-      "Xamarin.Forms.Pages/2.3.0.38-pre2": {
-        "dependencies": {
-          "Newtonsoft.Json": "12.0.2",
-          "Xamarin.Forms": "3.4.0.1008975",
-          "modernhttpclient": "2.4.2"
-        },
-        "runtime": {
-          "lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Xamarin.Forms.Pages.dll": {}
-        }
-      },
-      "Xamarin.Forms.Theme.Base/1.0.0.43-pre1": {
-        "dependencies": {
-          "Xamarin.Forms.Pages": "2.3.0.38-pre2"
-        },
-        "runtime": {
-          "lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Xamarin.Forms.Theme.Base.dll": {}
-        }
-      },
-      "Xamarin.Forms.Theme.Dark/1.0.0.43-pre1": {
-        "dependencies": {
-          "Xamarin.Forms.Pages": "2.3.0.38-pre2",
-          "Xamarin.Forms.Theme.Base": "1.0.0.43-pre1"
-        },
-        "runtime": {
-          "lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Xamarin.Forms.Theme.Dark.dll": {}
-        }
-      },
-      "Xamarin.Forms.Theme.Light/1.0.0.43-pre1": {
-        "dependencies": {
-          "Xamarin.Forms.Pages": "2.3.0.38-pre2",
-          "Xamarin.Forms.Theme.Base": "1.0.0.43-pre1"
-        },
-        "runtime": {
-          "lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Xamarin.Forms.Theme.Light.dll": {}
-        }
       }
     }
   },
@@ -200,13 +166,6 @@
       "path": "microsoft.netcore.platforms/1.1.0",
       "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
     },
-    "modernhttpclient/2.4.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Srkrjz2wBCh7af+AGqpPkJ3FSSFSruzg9mHVwwXiklf9gx2L1Ss2M+p2Mf4Fw17AOe6yPuJwdu4AAoslc6zP+w==",
-      "path": "modernhttpclient/2.4.2",
-      "hashPath": "modernhttpclient.2.4.2.nupkg.sha512"
-    },
     "NETStandard.Library/2.0.3": {
       "type": "package",
       "serviceable": true,
@@ -220,6 +179,13 @@
       "sha512": "sha512-rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
       "path": "newtonsoft.json/12.0.2",
       "hashPath": "newtonsoft.json.12.0.2.nupkg.sha512"
+    },
+    "Plugin.FirebasePushNotification/2.3.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bLy19B0gO4ZWQxa80ccgCWqktb6v13Vdj/5KBLaepnUdhOg8ejbyGEl7IAkSodipH0etO3Oakj/tqic4GwVqPw==",
+      "path": "plugin.firebasepushnotification/2.3.5",
+      "hashPath": "plugin.firebasepushnotification.2.3.5.nupkg.sha512"
     },
     "Refit/4.6.107": {
       "type": "package",
@@ -283,34 +249,6 @@
       "sha512": "sha512-tM9syeev45u92OFENGjq+Zw8WiEwLJFiXe317XpL9SY2RRk9sm2fc1lDVjzwz0da+5ZP5fi24NAPsPQdxBdMwQ==",
       "path": "xamarin.forms/3.4.0.1008975",
       "hashPath": "xamarin.forms.3.4.0.1008975.nupkg.sha512"
-    },
-    "Xamarin.Forms.Pages/2.3.0.38-pre2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-LKWntv0PZDWzAYT35JI83EIRj1I4M9y1q2fU8hyV67EF12TNDNHheH18s0NllWixgg/bcJOu80XpQPNQ3F8kSg==",
-      "path": "xamarin.forms.pages/2.3.0.38-pre2",
-      "hashPath": "xamarin.forms.pages.2.3.0.38-pre2.nupkg.sha512"
-    },
-    "Xamarin.Forms.Theme.Base/1.0.0.43-pre1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-nmklKhIbXkKn0dY6VjXFCCacOBIgwgVTXS/DDch9R4im3AUOgRYwoetuFwJOh1iXGw4cwLh2bkxNbfTbAihghA==",
-      "path": "xamarin.forms.theme.base/1.0.0.43-pre1",
-      "hashPath": "xamarin.forms.theme.base.1.0.0.43-pre1.nupkg.sha512"
-    },
-    "Xamarin.Forms.Theme.Dark/1.0.0.43-pre1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-QVCx7d+A7VdfUBJwNOpLWquaXzxiP7ZdDVHMiv0FViqWx6Sp38XMLbFI36rZR8LularQSvmrXymA0d142HbD3g==",
-      "path": "xamarin.forms.theme.dark/1.0.0.43-pre1",
-      "hashPath": "xamarin.forms.theme.dark.1.0.0.43-pre1.nupkg.sha512"
-    },
-    "Xamarin.Forms.Theme.Light/1.0.0.43-pre1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Vz4XcjS8HEbdobVNndYWQmj2jX+XHPqWppzoKiZGut7/Ml/CjAwQ2dbFiRedof4EHsQ4HGMpnLcxopd7KUOofA==",
-      "path": "xamarin.forms.theme.light/1.0.0.43-pre1",
-      "hashPath": "xamarin.forms.theme.light.1.0.0.43-pre1.nupkg.sha512"
     }
   }
 }
