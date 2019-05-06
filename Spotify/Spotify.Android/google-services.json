@@ -15,14 +15,6 @@
       },
       "oauth_client": [
         {
-          "client_id": "799044152167-pautkgmr90g4b5oa140dq4pgknjivkpm.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.companyname.Spotify",
-            "certificate_hash": "d6390451163be1c2e8e37392e6b33e6cd08bd73e"
-          }
-        },
-        {
           "client_id": "799044152167-cnncmilssfha8q3jq9qpasll3id7ct4j.apps.googleusercontent.com",
           "client_type": 3
         }

@@ -65,6 +65,20 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Plugin.FirebasePushNotification/2.3.5": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.0/Plugin.FirebasePushNotification.Abstractions.dll": {},
+          "lib/netstandard1.0/Plugin.FirebasePushNotification.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Plugin.FirebasePushNotification.Abstractions.dll": {},
+          "lib/netstandard1.0/Plugin.FirebasePushNotification.dll": {}
+        }
+      },
       "Refit/4.6.107": {
         "type": "package",
         "dependencies": {
@@ -554,6 +568,34 @@
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "newtonsoft.json.12.0.2.nupkg.sha512",
         "newtonsoft.json.nuspec"
+      ]
+    },
+    "Plugin.FirebasePushNotification/2.3.5": {
+      "sha512": "bLy19B0gO4ZWQxa80ccgCWqktb6v13Vdj/5KBLaepnUdhOg8ejbyGEl7IAkSodipH0etO3Oakj/tqic4GwVqPw==",
+      "type": "package",
+      "path": "plugin.firebasepushnotification/2.3.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid80/Plugin.FirebasePushNotification.Abstractions.dll",
+        "lib/MonoAndroid80/Plugin.FirebasePushNotification.Abstractions.pdb",
+        "lib/MonoAndroid80/Plugin.FirebasePushNotification.Abstractions.xml",
+        "lib/MonoAndroid80/Plugin.FirebasePushNotification.XML",
+        "lib/MonoAndroid80/Plugin.FirebasePushNotification.dll",
+        "lib/MonoAndroid80/Plugin.FirebasePushNotification.pdb",
+        "lib/Xamarin.iOS10/Plugin.FirebasePushNotification.Abstractions.dll",
+        "lib/Xamarin.iOS10/Plugin.FirebasePushNotification.Abstractions.pdb",
+        "lib/Xamarin.iOS10/Plugin.FirebasePushNotification.Abstractions.xml",
+        "lib/Xamarin.iOS10/Plugin.FirebasePushNotification.XML",
+        "lib/Xamarin.iOS10/Plugin.FirebasePushNotification.dll",
+        "lib/netstandard1.0/Plugin.FirebasePushNotification.Abstractions.dll",
+        "lib/netstandard1.0/Plugin.FirebasePushNotification.Abstractions.pdb",
+        "lib/netstandard1.0/Plugin.FirebasePushNotification.Abstractions.xml",
+        "lib/netstandard1.0/Plugin.FirebasePushNotification.deps.json",
+        "lib/netstandard1.0/Plugin.FirebasePushNotification.dll",
+        "lib/netstandard1.0/Plugin.FirebasePushNotification.xml",
+        "plugin.firebasepushnotification.2.3.5.nupkg.sha512",
+        "plugin.firebasepushnotification.nuspec"
       ]
     },
     "Refit/4.6.107": {
@@ -1231,6 +1273,7 @@
       "Microsoft.Net.Http >= 2.2.29",
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 12.0.2",
+      "Plugin.FirebasePushNotification >= 2.3.5",
       "Refit >= 4.6.107",
       "Xam.Plugin.Connectivity >= 3.2.0",
       "Xamarin.FFImageLoading.Forms >= 2.4.4.859",
@@ -1293,6 +1336,10 @@
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[12.0.2, )"
+          },
+          "Plugin.FirebasePushNotification": {
+            "target": "Package",
+            "version": "[2.3.5, )"
           },
           "Refit": {
             "target": "Package",

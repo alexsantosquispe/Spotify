@@ -7,13 +7,13 @@ D:\XamarinProjects\Spotify\Spotify\Spotify\obj\Debug\netstandard2.0\Spotify.Asse
 D:\XamarinProjects\Spotify\Spotify\Spotify\bin\Debug\netstandard2.0\Spotify.deps.json
 D:\XamarinProjects\Spotify\Spotify\Spotify\bin\Debug\netstandard2.0\Spotify.dll
 D:\XamarinProjects\Spotify\Spotify\Spotify\bin\Debug\netstandard2.0\Spotify.pdb
-D:\XamarinProjects\Spotify\Spotify\Spotify\obj\Debug\netstandard2.0\Spotify.csprojAssemblyReference.cache
 D:\XamarinProjects\Spotify\Spotify\Spotify\obj\Debug\netstandard2.0\Spotify.dll
 D:\XamarinProjects\Spotify\Spotify\Spotify\obj\Debug\netstandard2.0\Spotify.pdb
 D:\XamarinProjects\Spotify\Spotify\Spotify\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
 D:\XamarinProjects\Spotify\Spotify\Spotify\obj\Debug\netstandard2.0\Views\DetailPage.xaml.g.cs
 D:\XamarinProjects\Spotify\Spotify\Spotify\obj\Debug\netstandard2.0\Templates\ItemTrack.xaml.g.cs
 D:\XamarinProjects\Spotify\Spotify\Spotify\obj\Debug\netstandard2.0\Views\SettingsPage.xaml.g.cs
-D:\XamarinProjects\Spotify\Spotify\Spotify\obj\Debug\netstandard2.0\XamlC.stamp
 D:\XamarinProjects\Spotify\Spotify\Spotify\obj\Debug\netstandard2.0\Themes\Dark.xaml.g.cs
 D:\XamarinProjects\Spotify\Spotify\Spotify\obj\Debug\netstandard2.0\Themes\Light.xaml.g.cs
+D:\XamarinProjects\Spotify\Spotify\Spotify\obj\Debug\netstandard2.0\XamlC.stamp
+D:\XamarinProjects\Spotify\Spotify\Spotify\obj\Debug\netstandard2.0\Spotify.csprojAssemblyReference.cache

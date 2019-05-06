@@ -66,7 +66,6 @@ D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\zh-Hans
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\zh-Hant\Xamarin.Forms.Platform.iOS.resources.dll
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Spotify.dll
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Spotify.pdb
-D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Spotify.dll.mdb
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\ibtool\_BundleResourceWithLogicalName.items
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\actool\_PartialAppManifest.items
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\actool\_BundleResourceWithLogicalName.items
@@ -79,3 +78,15 @@ D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\XamlC.s
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\Spotify.iOS.csproj.CopyComplete
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\Spotify.iOS.exe
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\Spotify.iOS.pdb
+D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Plugin.FirebasePushNotification.Abstractions.dll
+D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Plugin.FirebasePushNotification.Abstractions.pdb
+D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Plugin.FirebasePushNotification.dll
+D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Refit.dll
+D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Firebase.Analytics.dll
+D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Firebase.CloudMessaging.dll
+D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Firebase.Core.dll
+D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Firebase.InstanceID.dll
+D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\XbdMerge\Firebase.InstanceID.dll.stamp
+D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\XbdMerge\Firebase.Core.dll.stamp
+D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\XbdMerge\Firebase.Analytics.dll.stamp
+D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\XbdMerge\Firebase.CloudMessaging.dll.stamp
