@@ -6,7 +6,6 @@ D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Newtons
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Plugin.FirebasePushNotification.Abstractions.dll
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Plugin.FirebasePushNotification.Abstractions.pdb
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Plugin.FirebasePushNotification.dll
-D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Refit.dll
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\SkiaSharp.dll
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\WebP.Touch.dll
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Plugin.Connectivity.Abstractions.dll
@@ -27,6 +26,7 @@ D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\FFImage
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\FFImageLoading.Svg.Forms.pdb
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\FFImageLoading.Transformations.dll
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\FFImageLoading.Transformations.pdb
+D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Firebase.Analytics.dll
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Firebase.CloudMessaging.dll
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Firebase.Core.dll
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Firebase.InstanceID.dll
@@ -85,4 +85,3 @@ D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\XamlC.s
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\Spotify.iOS.csproj.CopyComplete
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\Spotify.iOS.exe
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\Spotify.iOS.pdb
-D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\Spotify.iOS.csprojAssemblyReference.cache

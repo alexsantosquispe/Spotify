@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "8423dbdc340ff250cb9bbe830c8296108b59f5d8"
+    "signature": "9f1bd68a39e2f0e3cd4947d4da85bc97b589a478"
   },
   "compilationOptions": {},
   "targets": {
@@ -13,7 +13,6 @@
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "12.0.2",
           "Plugin.FirebasePushNotification": "2.3.5",
-          "Refit": "4.6.107",
           "Xam.Plugin.Connectivity": "3.2.0",
           "Xamarin.FFImageLoading.Forms": "2.4.4.859",
           "Xamarin.FFImageLoading.Svg.Forms": "2.4.4.859",
@@ -58,14 +57,6 @@
         "runtime": {
           "lib/netstandard1.0/Plugin.FirebasePushNotification.Abstractions.dll": {},
           "lib/netstandard1.0/Plugin.FirebasePushNotification.dll": {}
-        }
-      },
-      "Refit/4.6.107": {
-        "dependencies": {
-          "Newtonsoft.Json": "12.0.2"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Refit.dll": {}
         }
       },
       "SkiaSharp/1.60.0": {
@@ -186,13 +177,6 @@
       "sha512": "sha512-bLy19B0gO4ZWQxa80ccgCWqktb6v13Vdj/5KBLaepnUdhOg8ejbyGEl7IAkSodipH0etO3Oakj/tqic4GwVqPw==",
       "path": "plugin.firebasepushnotification/2.3.5",
       "hashPath": "plugin.firebasepushnotification.2.3.5.nupkg.sha512"
-    },
-    "Refit/4.6.107": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-sBIYAMYMJYSWzl5Vt0FjGuaEFIaAG9y7O8rXvjzpyQCYLKe22Sk9LoQ50K7Jpj/3no+9eNUQSwmKpTkq7+tKUw==",
-      "path": "refit/4.6.107",
-      "hashPath": "refit.4.6.107.nupkg.sha512"
     },
     "SkiaSharp/1.60.0": {
       "type": "package",
