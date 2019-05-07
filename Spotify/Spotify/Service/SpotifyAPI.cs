@@ -10,7 +10,7 @@ using Spotify.Utils;
 
 namespace Spotify.Service
 {
-    public class SpotifyAPI
+    public class SpotifyAPI : IApiService
     {
         private HttpClient _client;
         private readonly Network _network = new Network();
@@ -26,7 +26,7 @@ namespace Spotify.Service
             _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public async Task<SpotifyAccessToken> GetToken()
+        async Task<SpotifyAccessToken> GetToken()
         {            
             string Credentials = String.Format("{0}:{1}", CLIENT_ID, CLIENT_SECRET);
 

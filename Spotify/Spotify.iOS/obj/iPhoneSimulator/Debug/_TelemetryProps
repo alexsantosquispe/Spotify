@@ -3,4 +3,4 @@ UseConcurrentGC=False
 LinkerBehavior=None
 AdditionalSupportedEncodings=
 HttpClientImplementation=NSUrlSessionHandler
-SupportedArchitectures=x86_64
+SupportedArchitectures=i386, x86_64

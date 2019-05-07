@@ -28,19 +28,15 @@ namespace Spotify.ViewModel
             await _navigation.PopToRootAsync();
         }
 
-        public void RemoveSession()
-        {
-            if (Application.Current.Properties.ContainsKey("Email"))
-            {
-                EmailUser = "";
-                Application.Current.Properties.Remove("Email");
-            }
-        }
-
         public void Logout()
         {
-            RemoveSession();
-            SetCurrentTheme();
+            FirebaseAuth.Logout();
+        }
+
+        public void OnLogout()
+        {
+            Logout();
+            //SetCurrentTheme();
             GoToLoginPage();
         }
 
@@ -49,7 +45,7 @@ namespace Spotify.ViewModel
             _navigation = navigation;
             EmailUser = GetCurrentEmailUser();
             Theme = GetCurrentTheme();
-            LogoutCommand = new Command(Logout);
+            LogoutCommand = new Command(OnLogout);
         }
     }
 }

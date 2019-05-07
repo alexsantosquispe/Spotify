@@ -16,17 +16,17 @@
                     DownsampleToViewSize="true" />
             </StackLayout>
             <Label Text="Login and enjoy!" FontSize="30" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" Style="{StaticResource Title}" />
-            <StackLayout VerticalOptions="EndAndExpand" Spacing="4" Padding="32">
+            <StackLayout VerticalOptions="EndAndExpand" Spacing="4" Padding="32, 20, 32, 32" Margin="0, 8">
+                <Frame IsVisible="{Binding LoginError}" IsEnabled="{Binding LoginError}" HasShadow="False" CornerRadius="6" BackgroundColor="#f8d7da" BorderColor="##f5c6cb" Padding="12" >
+                    <Label Text="{Binding ErrorMessage}" TextColor="Red" />
+                </Frame>
                 <StackLayout>
                     <Label Text="Email" FontSize="15" Style="{StaticResource Title}" />
                     <Entry Text="{Binding EmailText}" Keyboard="Email" Placeholder="Entre your email" Style="{StaticResource EntryText}"/>
-                    <Label Text="{Binding EmailErrorMessage}" TextColor="Red" Margin="0, -8, 0, 0" IsVisible="{Binding EmailError}" IsEnabled="{Binding EmailError}" />
-                    
                     <Label Text="Password" FontSize="15" Style="{StaticResource Title}" />
-                    <Entry Text="{Binding PasswordText}" IsPassword="true" Placeholder="*********"  Style="{StaticResource EntryText}"/>
-                    <Label Text="{Binding PasswordErrorMessage}" TextColor="Red" Margin="0, -8, 0, 0" IsVisible="{Binding PasswordError}" IsEnabled="{Binding PasswordError}" />
+                    <Entry Text="{Binding PasswordText}" IsPassword="true" Placeholder=""  Style="{StaticResource EntryText}"/>
                 </StackLayout>
-                <Button Text="Login"                    
+                <Button Text="Login"       
                     CornerRadius="6" 
                     Margin="0, 16"
                     Style="{StaticResource LoginButton}"
@@ -34,5 +34,4 @@
             </StackLayout>
         </StackLayout>
     </ScrollView>
-
 </ContentPage>
