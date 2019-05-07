@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Plugin.Connectivity;
+using Spotify.Service;
 using Spotify.Themes;
 using Xamarin.Forms;
 
@@ -8,6 +9,9 @@ namespace Spotify.ViewModel
 {
     public abstract class BaseViewModel : INotifyPropertyChanged
     {
+        public readonly IFirebaseAuthService FirebaseAuth = new FireBaseAuth();
+        public readonly IApiService SpotifyAPI = new SpotifyAPI();
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

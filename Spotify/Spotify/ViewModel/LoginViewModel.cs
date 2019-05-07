@@ -7,59 +7,31 @@ namespace Spotify.ViewModel
 {
     public class LoginViewModel : BaseViewModel
     {
-        private readonly string USER_EMAIL = "alex.santos@jalasoft.com";
-
-        private readonly string PASSWORD = "123456";
-
         private INavigation _navigation;
 
         private readonly Validator validator = new Validator();
 
-        private bool _emailError = false;
+        private bool _loginError = false;
 
-        public bool EmailError
+        public bool LoginError
         {
-            get { return _emailError; }
+            get { return _loginError; }
             set
             {
-                _emailError = value;
-                OnPropertyChanged("EmailError");
+                _loginError = value;
+                OnPropertyChanged("LoginError");
             }
         }
 
-        private bool _passwordError = false;
+        private string _errorMessage;
 
-        public bool PasswordError
+        public string ErrorMessage
         {
-            get { return _passwordError; }
+            get { return _errorMessage; }
             set
             {
-                _passwordError = value;
-                OnPropertyChanged("PasswordError");
-            }
-        }
-
-        private string _emailErrorMessage;
-
-        public string EmailErrorMessage
-        {
-            get { return _emailErrorMessage; }
-            set
-            {
-                _emailErrorMessage = value;
-                OnPropertyChanged("EmailErrorMessage");
-            }
-        }
-
-        private string _passwordErrorMessage;
-
-        public string PasswordErrorMessage
-        {
-            get { return _passwordErrorMessage; }
-            set
-            {
-                _passwordErrorMessage = value;
-                OnPropertyChanged("PasswordErrorMessage");
+                _errorMessage = value;
+                OnPropertyChanged("ErrorMessage");
             }
         }
 
@@ -87,44 +59,33 @@ namespace Spotify.ViewModel
             }
         }
 
-        private string _logo;
+        public string Logo { get; set; }
 
-        public string Logo
-        {
-            get { return _logo; }
-            set { _logo = value; }
-        }
         public ICommand OnLoginCommand { get; private set; }
 
-        public void ValidateEmail()
+        public bool Validate()
         {
-            EmailError = false;
+            LoginError = false;
             if (validator.IsEmpty(EmailText))
             {
-                EmailErrorMessage = "This field is required";
-                EmailError = true;
+                ErrorMessage = "The email field is required";
+                LoginError = true;
+                return !LoginError;
             }
-            else if (!validator.isEmailAddress(EmailText) || USER_EMAIL != EmailText)
+            else if (!validator.isEmailAddress(EmailText))
             {
-                EmailErrorMessage = "Invalid Email";
-                EmailError = true;
+                ErrorMessage = "Invalid Email";
+                LoginError = true;
+                return !LoginError;
             }
-        }
-
-        public void ValidatePassword()
-        {
-            PasswordError = false;
-            if (validator.IsEmpty(PasswordText))
+            else if (validator.IsEmpty(PasswordText))
             {
-                PasswordErrorMessage = "This field is required";
-                PasswordError = true;
+                ErrorMessage = "The password field is required";
+                LoginError = true;
+                return !LoginError;
             }
-            else if (PASSWORD != PasswordText)
-            {
-                PasswordErrorMessage = "Invalid Password";
-                PasswordError = true;
-            }
-        }
+            return !LoginError;
+        }        
 
         public async void GoToHomePage()
         {
@@ -132,19 +93,19 @@ namespace Spotify.ViewModel
             await _navigation.PopToRootAsync();
         }
 
-        public void SaveSession()
-        {
-            Application.Current.Properties["Email"] = _emailText;
-        }
-
         public void OnLogin()
-        {
-            ValidateEmail();
-            ValidatePassword();
-            if (!EmailError && !PasswordError)
+        {            
+            if (Validate())
             {
-                SaveSession();
-                GoToHomePage();
+                if (FirebaseAuth.SignIn(EmailText, PasswordText))
+                {
+                    GoToHomePage();
+                }
+                else
+                {
+                    ErrorMessage = "Invalid email or password";
+                    LoginError = true;
+                }
             }
         }
 

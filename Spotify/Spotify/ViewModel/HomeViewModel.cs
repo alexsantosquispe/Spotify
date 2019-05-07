@@ -2,7 +2,6 @@
 using Spotify.Models;
 using Xamarin.Forms;
 using System.Windows.Input;
-using Spotify.Service;
 using System.Threading.Tasks;
 using System;
 
@@ -10,16 +9,16 @@ namespace Spotify.ViewModel
 {
     public class HomeViewModel : BaseViewModel
     {
-        private readonly SpotifyAPI _spotifyAPI = new SpotifyAPI();
+        public ICommand SearchArtistsCommand { get; private set; }
 
-        private ObservableCollection<Artist> artists = new ObservableCollection<Artist>();
+        private ObservableCollection<Artist> _artists = new ObservableCollection<Artist>();
 
         public ObservableCollection<Artist> Artists
         {
-            get { return artists; }
+            get { return _artists; }
             set
             {
-                artists = value;
+                _artists = value;
                 OnPropertyChanged("Artists");
             }
         }
@@ -42,16 +41,14 @@ namespace Spotify.ViewModel
         {
             get { return _icon; }
             set { _icon = value; }
-        }
-
-        public ICommand SearchArtistsCommand { get; private set; }
+        }        
 
         public async Task _SearchArtists(string query)
         {
             try
             {
                 IsLoading = true;
-                var artistList = await _spotifyAPI.GetArtists(query.ToLower());
+                var artistList = await SpotifyAPI.GetArtists(query.ToLower());
                 if (artistList != null && artistList.Count > 0)
                 {                    
                     Artists.Clear();
