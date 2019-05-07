@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using Plugin.Connectivity;
 using Spotify.Service;
 using Spotify.Themes;
+using Spotify.Utils;
 using Xamarin.Forms;
 
 namespace Spotify.ViewModel
@@ -59,7 +59,8 @@ namespace Spotify.ViewModel
                 OnPropertyChanged("IsLoading");
             }
         }
-        private bool _isOffline = !CrossConnectivity.Current.IsConnected;
+
+        private bool _isOffline = !Network.Instance.IsConnected;
 
         public bool IsOffline
         {
@@ -85,7 +86,7 @@ namespace Spotify.ViewModel
 
         public BaseViewModel()
         {
-            CrossConnectivity.Current.ConnectivityChanged += (sender, args) =>
+            Network.Instance.ConnectivityChanged += (sender, args) =>
             {
                 IsOffline = !args.IsConnected;
             };

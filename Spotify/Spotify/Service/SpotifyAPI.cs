@@ -13,7 +13,6 @@ namespace Spotify.Service
     public class SpotifyAPI : IApiService
     {
         private HttpClient _client;
-        private readonly Network _network = new Network();
         private const string BASE_URL = "https://api.spotify.com/v1";
         private const string TOKEN_URL = "https://accounts.spotify.com/api/token";
         private const string CLIENT_ID = "e17a0b97649a49058fb90483a7802d54";
@@ -30,7 +29,7 @@ namespace Spotify.Service
         {            
             string Credentials = String.Format("{0}:{1}", CLIENT_ID, CLIENT_SECRET);
 
-            if (_network.IsConnected())
+            if (Network.Instance.IsConnected)
             {
                 _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(Encoding.UTF8.GetBytes(Credentials)));
 
@@ -52,7 +51,7 @@ namespace Spotify.Service
         {
             string GET_ARTIST = "/search?q=" + word + "&type=artist&market=US&limit=20&offset=0";
             GET_ARTIST = GET_ARTIST.Replace(" ", "%20");
-            if (_network.IsConnected())
+            if (Network.Instance.IsConnected)
             {
                 SpotifyAccessToken Token = await GetToken();
                 _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(Token.token_type, Token.access_token);
@@ -73,7 +72,7 @@ namespace Spotify.Service
         {
             string GET_TRACKS = "/artists/" + id + "/top-tracks?country=US";
 
-            if (_network.IsConnected())
+            if (Network.Instance.IsConnected)
             {
                 SpotifyAccessToken Token = await GetToken();
                 _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(Token.token_type, Token.access_token);

@@ -1,14 +1,21 @@
 ﻿using Plugin.Connectivity;
+using Plugin.Connectivity.Abstractions;
 
 namespace Spotify.Utils
 {
-    public class Network
+    public static class Network
     {
-        public bool IsConnected()
+        static IConnectivity connectivity;
+        public static IConnectivity Instance
         {
-            return CrossConnectivity.Current.IsConnected;
-        }
-
-        public Network() { }
+            get
+            {
+                return connectivity ?? (connectivity = CrossConnectivity.Current);
+            }
+            set
+            {
+                connectivity = value;
+            }
+        }        
     }
 }

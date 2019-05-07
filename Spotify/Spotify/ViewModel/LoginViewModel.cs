@@ -115,5 +115,9 @@ namespace Spotify.ViewModel
             Logo = "spotify_logo_" + GetCurrentTheme().ToLower() + ".png";
             OnLoginCommand = new Command(OnLogin);
         }
+
+        public LoginViewModel()
+        {
+        }
     }
 }
