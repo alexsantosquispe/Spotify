@@ -3,9 +3,9 @@ using System.Text.RegularExpressions;
 
 namespace Spotify.Utils
 {
-    public class Validator
+    public static class Validator
     {
-        public bool isEmailAddress(string email)
+        public static bool isEmailAddress(string email)
         {
             try
             {
@@ -21,7 +21,7 @@ namespace Spotify.Utils
             }
         }
 
-        public bool IsEmpty(string value)
+        public static bool IsEmpty(string value)
         {
             try
             {

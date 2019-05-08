@@ -9,8 +9,6 @@ namespace Spotify.ViewModel
     {
         private INavigation _navigation;
 
-        private readonly Validator validator = new Validator();
-
         private bool _loginError = false;
 
         public bool LoginError
@@ -66,19 +64,19 @@ namespace Spotify.ViewModel
         public bool Validate()
         {
             LoginError = false;
-            if (validator.IsEmpty(EmailText))
+            if (Validator.IsEmpty(EmailText))
             {
                 ErrorMessage = "The email field is required";
                 LoginError = true;
                 return !LoginError;
             }
-            else if (!validator.isEmailAddress(EmailText))
+            else if (!Validator.isEmailAddress(EmailText))
             {
                 ErrorMessage = "Invalid Email";
                 LoginError = true;
                 return !LoginError;
             }
-            else if (validator.IsEmpty(PasswordText))
+            else if (Validator.IsEmpty(PasswordText))
             {
                 ErrorMessage = "The password field is required";
                 LoginError = true;
@@ -114,10 +112,6 @@ namespace Spotify.ViewModel
             _navigation = navigation;
             Logo = "spotify_logo_" + GetCurrentTheme().ToLower() + ".png";
             OnLoginCommand = new Command(OnLogin);
-        }
-
-        public LoginViewModel()
-        {
         }
     }
 }

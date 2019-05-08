@@ -85,3 +85,4 @@ D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\XamlC.s
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\Spotify.iOS.csproj.CopyComplete
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\Spotify.iOS.exe
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\Spotify.iOS.pdb
+D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\Spotify.iOS.csprojAssemblyReference.cache
