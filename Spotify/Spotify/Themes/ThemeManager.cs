@@ -1,16 +1,19 @@
-﻿using Xamarin.Forms;
+﻿using Spotify.Utils;
+using Xamarin.Forms;
 
 namespace Spotify.Themes
 {
-    public class ThemeManager
+    public static class ThemeManager
     {
+        public static readonly IStore Store = new Store();
+
         public static void ChangeTheme(string theme)
         {
             var mergeDictionaries = Application.Current.Resources.MergedDictionaries;
             if (mergeDictionaries != null)
             {
                 mergeDictionaries.Clear();
-                _SaveTheme(theme);
+                SaveTheme(theme);
                 switch (theme)
                 {
                     case "Light":
@@ -28,22 +31,19 @@ namespace Spotify.Themes
 
         public static void LoadTheme()
         {            
-            ChangeTheme(_GetThemeSaved());
+            ChangeTheme(GetThemeSaved());
         }
 
-        private static string _GetThemeSaved()
+        public static string GetThemeSaved()
         {
             string defaultTheme = "Light";
-            if (Application.Current.Properties.ContainsKey("Theme"))
-            {
-                defaultTheme = Application.Current.Properties["Theme"].ToString();
-            }
+            Store.GetValue("Theme");
             return defaultTheme;
         }
 
-        private static void _SaveTheme(string theme)
+        public static void SaveTheme(string theme)
         {
-            Application.Current.Properties["Theme"] = theme;
+            Store.SetValue("Theme", theme);
         }
     }
 }
