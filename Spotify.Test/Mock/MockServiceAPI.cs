@@ -5,7 +5,7 @@ using Spotify.Service;
 
 namespace Spotify.Test.Mock
 {
-    public class MockServiceAPI : IApiService
+    public class MockServiceAPI : ISpotifyAPI
     {
         public async Task<List<Artist>> GetArtists(string word)
         {

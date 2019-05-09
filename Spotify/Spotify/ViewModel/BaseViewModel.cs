@@ -9,16 +9,23 @@ namespace Spotify.ViewModel
 {
     public abstract class BaseViewModel : INotifyPropertyChanged
     {
-        public readonly IFirebaseAuthService FirebaseAuth = new FireBaseAuth();
-        public readonly IApiService SpotifyAPI = new SpotifyAPI();
+        public readonly IFirebaseAuth FirebaseAuth = new FireBaseAuth();
+        public readonly ISpotifyAPI SpotifyAPI = new SpotifyAPI();
 
         public event PropertyChangedEventHandler PropertyChanged;
-
+        /// <summary>
+        /// Event to check what propertie has changed
+        /// </summary>
+        /// <param name="propertyName"></param>
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        /// <summary>
+        /// Gets the current theme saved
+        /// </summary>
+        /// <returns>An string with the current theme</returns>
         public string GetCurrentTheme()
         {
             string theme = "";
@@ -29,15 +36,22 @@ namespace Spotify.ViewModel
             return theme;
         }
 
-        public void SetCurrentTheme()
+        /// <summary>
+        /// Sets the current theme to default theme
+        /// </summary>
+        public void SetCurrentTheme(string theme)
         {
-            if (Theme == "Dark")
+            if (Theme != theme)
             {
-                ThemeManager.ChangeTheme("Light");
-                Theme = "Light";
-            }            
+                ThemeManager.ChangeTheme(theme);
+                Theme = theme;
+            }
         }
 
+        /// <summary>
+        /// Gets the email of the current session
+        /// </summary>
+        /// <returns>A string with the email</returns>
         public string GetCurrentEmailUser()
         {
             string emailUser = "";
@@ -60,7 +74,7 @@ namespace Spotify.ViewModel
             }
         }
 
-        private bool _isOffline = !Network.Instance.IsConnected;
+        private bool _isOffline = !Network.Connectivity.IsConnected;
 
         public bool IsOffline
         {
@@ -84,9 +98,12 @@ namespace Spotify.ViewModel
             }
         }
 
+        /// <summary>
+        /// Constructor of BaseViewModel Class
+        /// </summary>
         public BaseViewModel()
         {
-            Network.Instance.ConnectivityChanged += (sender, args) =>
+            Network.Connectivity.ConnectivityChanged += (sender, args) =>
             {
                 IsOffline = !args.IsConnected;
             };

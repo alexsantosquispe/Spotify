@@ -4,6 +4,11 @@ namespace Spotify.Utils
 {
     public class Store : IStore
     {
+        public bool Exist(string key)
+        {
+            return Application.Current.Properties.ContainsKey(key);
+        }
+
         public string GetValue(string key)
         {
             string value = "";
@@ -25,6 +30,6 @@ namespace Spotify.Utils
         public void SetValue(string key, string value)
         {
             Application.Current.Properties[key] = value;
-        }
+        }        
     }
 }

@@ -99,9 +99,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="CustomRendererEntryIOS.cs" />
+    <Compile Include="RemoteConfigService.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
+    <None Include="GoogleService-Info.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <BundleResource Include="Resources\GothamMedium_1.ttf" />

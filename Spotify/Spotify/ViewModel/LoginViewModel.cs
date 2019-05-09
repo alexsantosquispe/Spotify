@@ -9,6 +9,8 @@ namespace Spotify.ViewModel
     {
         private INavigation _navigation;
 
+        private IStore Store = new Store();
+
         private bool _loginError = false;
 
         public bool LoginError
@@ -57,10 +59,12 @@ namespace Spotify.ViewModel
             }
         }
 
-        public string Logo { get; set; }
-
         public ICommand OnLoginCommand { get; private set; }
 
+        /// <summary>
+        /// Validates the email and password fields
+        /// </summary>
+        /// <returns></returns>
         public bool Validate()
         {
             LoginError = false;
@@ -85,12 +89,18 @@ namespace Spotify.ViewModel
             return !LoginError;
         }        
 
+        /// <summary>
+        /// Goes to HomeViewPage
+        /// </summary>
         public async void GoToHomePage()
         {
             _navigation.InsertPageBefore(new HomePage(), _navigation.NavigationStack[0]);
             await _navigation.PopToRootAsync();
         }
 
+        /// <summary>
+        /// Calls to Fiorebase's login interface and signin
+        /// </summary>
         public void OnLogin()
         {            
             if (Validate())
@@ -107,10 +117,13 @@ namespace Spotify.ViewModel
             }
         }
 
+        /// <summary>
+        /// Constructor for LoginViewModel Class
+        /// </summary>
+        /// <param name="navigation"></param>
         public LoginViewModel(INavigation navigation)
         {
             _navigation = navigation;
-            Logo = "spotify_logo_" + GetCurrentTheme().ToLower() + ".png";
             OnLoginCommand = new Command(OnLogin);
         }
     }

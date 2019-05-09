@@ -55,6 +55,10 @@ namespace Spotify.ViewModel
             }
         }
 
+        /// <summary>
+        /// Initializes properties
+        /// </summary>
+        /// <param name="artist"></param>
         public DetailViewModel(Artist artist)
         {
             _SetInfoArtist(artist);

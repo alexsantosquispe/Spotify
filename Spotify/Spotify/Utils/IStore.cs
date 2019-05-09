@@ -7,6 +7,13 @@ namespace Spotify.Utils
     public interface IStore
     {
         /// <summary>
+        /// Validates if some key exists
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        bool Exist(string key);
+
+        /// <summary>
         /// Gets the value of some key
         /// </summary>
         /// <param name="key"></param>

@@ -15,9 +15,25 @@
             <Style x:Key="BackgroundItem" TargetType="Frame">
                 <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundItem}" />
             </Style>
+            <Style x:Key="ErrorFrame" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="{DynamicResource LightRed}" />
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="CornerRadius" Value="6" />
+                <Setter Property="Padding" Value="12" />
+                <Setter Property="Margin" Value="0, 4" />
+            </Style>
+            <Style x:Key="ErrorText" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource DarkRed}"/>
+            </Style>
+            <Style x:Key="CustomEntryFrame" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="{DynamicResource White}" />
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="CornerRadius" Value="6" />
+            </Style>
             <Style x:Key="LoginButton" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="{DynamicResource GreenColor}" />
-                <Setter Property="TextColor" Value="{DynamicResource PrimaryColor}" />
+                <Setter Property="TextColor" Value="{DynamicResource White}" />
             </Style>
             <Style x:Key="Title" TargetType="Label">
                 <Setter Property="TextColor" Value="{DynamicResource TitleColor}"/>
@@ -31,9 +47,9 @@
             <Style x:Key="AccentText" TargetType="Label">
                 <Setter Property="TextColor" Value="{DynamicResource GreenColor}"/>
             </Style>
-            <Style x:Key="EntryText" TargetType="Entry">
-                <Setter Property="TextColor" Value="{DynamicResource TitleColor}" />
-                <Setter Property="PlaceholderColor" Value="{DynamicResource SubTitleColor}"/>
+            <Style x:Key="CustomEntry" TargetType="Entry">
+                <Setter Property="PlaceholderColor" Value="{DynamicResource LightGray}"/>
+                <Setter Property="HeightRequest" Value="48" />
             </Style>
             <Style x:Key="SearchBar" TargetType="SearchBar">
                 <Setter Property="TextColor" Value="{DynamicResource TitleColor}" />

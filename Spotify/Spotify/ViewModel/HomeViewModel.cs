@@ -40,9 +40,17 @@ namespace Spotify.ViewModel
         public string Icon
         {
             get { return _icon; }
-            set { _icon = value; }
+            set {
+                _icon = value;
+                OnPropertyChanged("Icon");
+            }
         }        
 
+        /// <summary>
+        /// Populates the list of artists refer to query
+        /// </summary>
+        /// <param name="query">string variable to artist searching</param>
+        /// <returns></returns>
         public async Task _SearchArtists(string query)
         {
             try
@@ -66,6 +74,9 @@ namespace Spotify.ViewModel
             }
         }
 
+        /// <summary>
+        /// Initializes properties
+        /// </summary>
         public HomeViewModel()
         {
             Icon = "settings_" + GetCurrentTheme().ToLower() + ".png";

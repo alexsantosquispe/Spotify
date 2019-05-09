@@ -2,29 +2,32 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:control="clr-namespace:Spotify.Controls"
              NavigationPage.HasNavigationBar="False"
+             BackgroundImage="spotify_bg.jpg"
              StyleClass="NavigationPage"
              x:Class="Spotify.Views.LoginPage">
-
     <ScrollView>
-        <StackLayout Padding="24, 8" Style="{StaticResource BackgroundPage}">
+        <StackLayout Padding="24, 8">
             <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
                 <ffimageloading:CachedImage
-                    Source="{Binding Logo}"
+                    Source="spotify_logo_dark.png"
                     VerticalOptions="Center"
                     WidthRequest="200"
                     DownsampleToViewSize="true" />
             </StackLayout>
-            <Label Text="Login and enjoy!" FontSize="30" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" Style="{StaticResource Title}" />
+            <Label Text="Login" TextColor="White" FontSize="30" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
             <StackLayout VerticalOptions="EndAndExpand" Spacing="4" Padding="32, 20, 32, 32" Margin="0, 8">
-                <Frame IsVisible="{Binding LoginError}" IsEnabled="{Binding LoginError}" HasShadow="False" CornerRadius="6" BackgroundColor="#f8d7da" BorderColor="##f5c6cb" Padding="12" >
-                    <Label Text="{Binding ErrorMessage}" TextColor="Red" />
+                <Frame IsVisible="{Binding LoginError}" IsEnabled="{Binding LoginError}" Style="{StaticResource ErrorFrame}">
+                    <Label Text="{Binding ErrorMessage}" Style="{StaticResource ErrorText}" />
                 </Frame>
                 <StackLayout>
-                    <Label Text="Email" FontSize="15" Style="{StaticResource Title}" />
-                    <Entry Text="{Binding EmailText}" Keyboard="Email" Placeholder="Entre your email" Style="{StaticResource EntryText}"/>
-                    <Label Text="Password" FontSize="15" Style="{StaticResource Title}" />
-                    <Entry Text="{Binding PasswordText}" IsPassword="true" Placeholder=""  Style="{StaticResource EntryText}"/>
+                    <Frame Style="{StaticResource CustomEntryFrame}">
+                        <control:CustomEntry Text="{Binding EmailText}" Keyboard="Email" Placeholder="Email" BorderWidth="0" CornerRadius="6" Style="{StaticResource CustomEntry}" />
+                    </Frame>
+                    <Frame Style="{StaticResource CustomEntryFrame}">
+                        <control:CustomEntry Text="{Binding PasswordText}" IsPassword="true" Placeholder="Password" BorderWidth="0" CornerRadius="6" Style="{StaticResource CustomEntry}" />
+                    </Frame>
                 </StackLayout>
                 <Button Text="Login"       
                     CornerRadius="6" 
