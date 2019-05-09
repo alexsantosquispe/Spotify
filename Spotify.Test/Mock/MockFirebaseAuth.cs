@@ -2,7 +2,7 @@
 
 namespace Spotify.Test.Mock
 {
-    public class MockFirebaseAuth : IFirebaseAuthService
+    public class MockFirebaseAuth : IFirebaseAuth
     {
         private readonly string USER_EMAIL = "alex.santos@jalasoft.com";
 

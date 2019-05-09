@@ -12,7 +12,7 @@ namespace Spotify.Test
         [TestMethod]
         public async System.Threading.Tasks.Task GetArtistsTest()
         {
-            IApiService SpotifyAPI = new MockServiceAPI();
+            ISpotifyAPI SpotifyAPI = new MockServiceAPI();
             var artists = await SpotifyAPI.GetArtists("");
             int max = artists.Count();
             Assert.IsTrue(max == 20);
@@ -21,7 +21,7 @@ namespace Spotify.Test
         [TestMethod]
         public async System.Threading.Tasks.Task GetTracksTest()
         {
-            IApiService SpotifyAPI = new MockServiceAPI();
+            ISpotifyAPI SpotifyAPI = new MockServiceAPI();
             var tracks = await SpotifyAPI.GetTopTracks("");
             int max = tracks.Count();
             Assert.IsTrue(max == 10);

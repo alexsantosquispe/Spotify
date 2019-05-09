@@ -40,7 +40,10 @@
             <!--#endregion-->
             <!--#region theme-->
             <Label Text="Appearance" TextColor="#1DB954" FontAttributes="Bold" Margin="0, 8, 0, 0" />
-            <StackLayout HorizontalOptions="Start" Spacing="2">
+            <StackLayout HorizontalOptions="StartAndExpand" Spacing="2" Padding="0">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GetRemoteConfigCommand}"/>
+                </StackLayout.GestureRecognizers>
                 <Label Text="Theme" LineBreakMode="WordWrap" Style="{StaticResource Title}" />
                 <Label Text="{Binding Theme}" LineBreakMode="WordWrap" Style="{StaticResource SubTitle}" />
             </StackLayout>

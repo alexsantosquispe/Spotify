@@ -10,7 +10,7 @@ namespace Spotify.Test
         [TestMethod]
         public void Signin()
         {
-            IFirebaseAuthService firebaseAuth = new MockFirebaseAuth();
+            IFirebaseAuth firebaseAuth = new MockFirebaseAuth();
             string email1 = "alex",
                    password1 = "",
                    email2 = "",

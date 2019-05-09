@@ -55,6 +55,9 @@
     <PackageReference Include="Plugin.FirebasePushNotification">
       <Version>2.3.5</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.Firebase.Config">
+      <Version>60.1142.1</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2.1" />
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="27.0.2.1" />
@@ -66,6 +69,7 @@
     <Compile Include="CustomRendererEntryAndroid.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MainApplication.cs" />
+    <Compile Include="RemoteConfigService.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -141,6 +145,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\ic_notification.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\xml\remote_config_defaults.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\spotify_bg.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

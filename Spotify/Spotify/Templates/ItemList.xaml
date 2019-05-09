@@ -15,6 +15,7 @@
                 WidthRequest="60"
                 DownsampleToViewSize="true">
                 <ffimageloading:CachedImage.Transformations>
+                    <!--<fftransformations:BlurredTransformation />-->
                     <fftransformations:CircleTransformation />
                 </ffimageloading:CachedImage.Transformations>
             </ffimageloading:CachedImage>

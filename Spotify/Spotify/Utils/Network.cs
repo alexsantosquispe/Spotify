@@ -6,7 +6,7 @@ namespace Spotify.Utils
     public static class Network
     {
         static IConnectivity connectivity;
-        public static IConnectivity Instance
+        public static IConnectivity Connectivity
         {
             get
             {

@@ -10,7 +10,7 @@ using Spotify.Utils;
 
 namespace Spotify.Service
 {
-    public class SpotifyAPI : IApiService
+    public class SpotifyAPI : ISpotifyAPI
     {
         private HttpClient _client;
         private const string BASE_URL = "https://api.spotify.com/v1";
@@ -18,6 +18,9 @@ namespace Spotify.Service
         private const string CLIENT_ID = "e17a0b97649a49058fb90483a7802d54";
         private const string CLIENT_SECRET = "0efa0ca1a2ad42a2b25233b8ff50192a";
 
+        /// <summary>
+        /// Initializes the http client
+        /// </summary>
         public SpotifyAPI()
         {
             _client = new HttpClient();
@@ -25,11 +28,15 @@ namespace Spotify.Service
             _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
+        /// <summary>
+        /// Gets Spotify Token Access
+        /// </summary>
+        /// <returns></returns>
         async Task<SpotifyAccessToken> GetToken()
         {            
             string Credentials = String.Format("{0}:{1}", CLIENT_ID, CLIENT_SECRET);
 
-            if (Network.Instance.IsConnected)
+            if (Network.Connectivity.IsConnected)
             {
                 _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(Encoding.UTF8.GetBytes(Credentials)));
 
@@ -47,11 +54,16 @@ namespace Spotify.Service
             return default(SpotifyAccessToken);
         }
 
+        /// <summary>
+        /// Gets list of artists related to the word param
+        /// </summary>
+        /// <param name="word"></param>
+        /// <returns>List of artists</returns>
         public async Task<List<Artist>> GetArtists(string word)
         {
             string GET_ARTIST = "/search?q=" + word + "&type=artist&market=US&limit=20&offset=0";
             GET_ARTIST = GET_ARTIST.Replace(" ", "%20");
-            if (Network.Instance.IsConnected)
+            if (Network.Connectivity.IsConnected)
             {
                 SpotifyAccessToken Token = await GetToken();
                 _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(Token.token_type, Token.access_token);
@@ -68,11 +80,16 @@ namespace Spotify.Service
             return default(List<Artist>);
         }
 
+        /// <summary>
+        /// Gets top tracks from some artist's id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>List of tracks</returns>
         public async Task<List<Track>> GetTopTracks(string id)
         {
             string GET_TRACKS = "/artists/" + id + "/top-tracks?country=US";
 
-            if (Network.Instance.IsConnected)
+            if (Network.Connectivity.IsConnected)
             {
                 SpotifyAccessToken Token = await GetToken();
                 _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(Token.token_type, Token.access_token);

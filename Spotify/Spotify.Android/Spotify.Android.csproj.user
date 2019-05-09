@@ -4,7 +4,7 @@
     <SelectedDevice>Sony F5121</SelectedDevice>
     <DefaultDevice>pixel_3</DefaultDevice>
     <AndroidDesignerPreferredDevice>Nexus 4</AndroidDesignerPreferredDevice>
-    <AndroidDesignerPreferredTheme>Theme.DeviceDefault</AndroidDesignerPreferredTheme>
+    <AndroidDesignerPreferredTheme>Theme.DeviceDefault.NoActionBar.Fullscreen</AndroidDesignerPreferredTheme>
     <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
 </Project>

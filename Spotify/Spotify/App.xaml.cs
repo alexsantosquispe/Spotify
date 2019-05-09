@@ -3,24 +3,26 @@ using Xamarin.Forms.Xaml;
 using Spotify.Views;
 using Spotify.Themes;
 using Plugin.FirebasePushNotification;
+using Spotify.Utils;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Spotify
 {
     public partial class App : Application
     {
+        private readonly IStore Store = new Store();
+
         public App()
         {
             InitializeComponent();
             ThemeManager.LoadTheme();
-            if (Current.Properties.ContainsKey("Email"))
-            {
-                MainPage = new NavigationPage(new HomePage());
-            }
-            else
+            if (!Store.Exist("Email"))
             {
                 MainPage = new NavigationPage(new LoginPage());
-            }                        
+            } else
+            {
+                MainPage = new NavigationPage(new HomePage());
+            }            
         }
 
         protected override void OnStart()
