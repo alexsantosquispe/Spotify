@@ -38,7 +38,12 @@ namespace Spotify.Themes
         /// </summary>
         public static void LoadTheme()
         {
-            ChangeTheme("Light");
+            string theme = "Light";
+            if (Store.Exist("Theme"))
+            {
+                theme = Store.GetValue("Theme");
+            }
+            ChangeTheme(theme);
         }
     }
 }

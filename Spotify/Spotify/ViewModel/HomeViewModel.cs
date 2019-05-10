@@ -41,7 +41,7 @@ namespace Spotify.ViewModel
         {
             get { return _icon; }
             set {
-                _icon = value;
+                _icon = "settings_" + GetCurrentTheme().ToLower() + ".png";                
                 OnPropertyChanged("Icon");
             }
         }        

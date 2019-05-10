@@ -123,6 +123,7 @@ namespace Spotify.ViewModel
         /// <param name="navigation"></param>
         public LoginViewModel(INavigation navigation)
         {
+            EmailText = "alex.santos@jalasoft.com";
             _navigation = navigation;
             OnLoginCommand = new Command(OnLogin);
         }

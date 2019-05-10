@@ -21,5 +21,10 @@ namespace Spotify.Test.Mock
         {
             defaultValue = null;
         }
+
+        public bool Exist(string key)
+        {
+            return true;
+        }
     }
 }
