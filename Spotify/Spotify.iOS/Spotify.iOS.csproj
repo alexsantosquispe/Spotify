@@ -113,18 +113,6 @@
     <BundleResource Include="Resources\GothamMedium.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\spotify_logo_dark.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\spotify_logo_dark.imageset\spotify_logo_dark4.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\spotify_logo_dark.imageset\spotify_logo_dark@2x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\spotify_logo_dark.imageset\spotify_logo_dark@3x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\spotify_bg.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
