@@ -2,15 +2,18 @@
   "images": [
     {
       "scale": "1x",
-      "idiom": "universal"
+      "idiom": "universal",
+      "filename": "user.png"
     },
     {
       "scale": "2x",
-      "idiom": "universal"
+      "idiom": "universal",
+      "filename": "user1.png"
     },
     {
       "scale": "3x",
-      "idiom": "universal"
+      "idiom": "universal",
+      "filename": "user2.png"
     }
   ],
   "properties": {},

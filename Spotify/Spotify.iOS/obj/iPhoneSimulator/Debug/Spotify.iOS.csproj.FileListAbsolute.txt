@@ -73,15 +73,16 @@ D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\zh-Hans
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\zh-Hant\Xamarin.Forms.Platform.iOS.resources.dll
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Spotify.dll
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Spotify.pdb
+D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Spotify.dll.mdb
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\ibtool\_BundleResourceWithLogicalName.items
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\actool\_PartialAppManifest.items
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\actool\_BundleResourceWithLogicalName.items
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\coremlc\_PartialAppManifest.items
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\coremlc\_BundleResourceWithLogicalName.items
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\optimized\
+D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\Spotify.iOS.csprojAssemblyReference.cache
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\Spotify.iOS.csproj.CoreCompileInputs.cache
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\XamlC.stamp
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\Spotify.iOS.csproj.CopyComplete
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\Spotify.iOS.exe
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\Spotify.iOS.pdb
-D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\Spotify.iOS.csprojAssemblyReference.cache

@@ -12,6 +12,6 @@
     <Color x:Key="White">#FFFFFF</Color>
     <Color x:Key="Black">#000000</Color>
     <Color x:Key="LightGray">#CED4DA</Color>
-    <Color x:Key="LightRed">#CED4DA</Color>
+    <Color x:Key="LightRed">#F8D7DA</Color>
     <Color x:Key="DarkRed">#87000C</Color>
 </ResourceDictionary>

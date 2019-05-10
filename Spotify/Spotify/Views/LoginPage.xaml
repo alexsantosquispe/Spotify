@@ -4,37 +4,46 @@
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:control="clr-namespace:Spotify.Controls"
              NavigationPage.HasNavigationBar="False"
-             BackgroundImage="spotify_bg.jpg"
              StyleClass="NavigationPage"
              x:Class="Spotify.Views.LoginPage">
     <ScrollView>
-        <StackLayout Padding="24, 8">
-            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                <ffimageloading:CachedImage
+        <RelativeLayout>
+            <Image
+                Aspect="AspectFill"
+                Source="spotify_bg.jpg"
+                RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
+            </Image>
+            <StackLayout Padding="24, 8"
+                         RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                         RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <ffimageloading:CachedImage
                     Source="spotify_logo_dark.png"
                     VerticalOptions="Center"
                     WidthRequest="200"
                     DownsampleToViewSize="true" />
-            </StackLayout>
-            <Label Text="Login" TextColor="White" FontSize="30" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
-            <StackLayout VerticalOptions="EndAndExpand" Spacing="4" Padding="32, 20, 32, 32" Margin="0, 8">
-                <Frame IsVisible="{Binding LoginError}" IsEnabled="{Binding LoginError}" Style="{StaticResource ErrorFrame}">
-                    <Label Text="{Binding ErrorMessage}" Style="{StaticResource ErrorText}" />
-                </Frame>
-                <StackLayout>
-                    <Frame Style="{StaticResource CustomEntryFrame}">
-                        <control:CustomEntry Text="{Binding EmailText}" Keyboard="Email" Placeholder="Email" BorderWidth="0" CornerRadius="6" Style="{StaticResource CustomEntry}" />
-                    </Frame>
-                    <Frame Style="{StaticResource CustomEntryFrame}">
-                        <control:CustomEntry Text="{Binding PasswordText}" IsPassword="true" Placeholder="Password" BorderWidth="0" CornerRadius="6" Style="{StaticResource CustomEntry}" />
-                    </Frame>
                 </StackLayout>
-                <Button Text="Login"       
+                <Label Text="Login" TextColor="White" FontSize="30" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
+                <StackLayout VerticalOptions="EndAndExpand" Spacing="4" Padding="32, 20, 32, 32" Margin="0, 8">
+                    <Frame IsVisible="{Binding LoginError}" IsEnabled="{Binding LoginError}" Style="{StaticResource ErrorFrame}">
+                        <Label Text="{Binding ErrorMessage}" Style="{StaticResource ErrorText}" />
+                    </Frame>
+                    <StackLayout>
+                        <Frame Style="{StaticResource CustomEntryFrame}">
+                            <control:CustomEntry Text="{Binding EmailText}" Keyboard="Email" Placeholder="Email" BorderWidth="0" CornerRadius="6" Style="{StaticResource CustomEntry}" />
+                        </Frame>
+                        <Frame Style="{StaticResource CustomEntryFrame}">
+                            <control:CustomEntry Text="{Binding PasswordText}" IsPassword="true" Placeholder="Password" BorderWidth="0" CornerRadius="6" Style="{StaticResource CustomEntry}" />
+                        </Frame>
+                    </StackLayout>
+                    <Button Text="Login"       
                     CornerRadius="6" 
                     Margin="0, 16"
                     Style="{StaticResource LoginButton}"
                     Command="{Binding OnLoginCommand}" />
+                </StackLayout>
             </StackLayout>
-        </StackLayout>
+        </RelativeLayout>
     </ScrollView>
 </ContentPage>
