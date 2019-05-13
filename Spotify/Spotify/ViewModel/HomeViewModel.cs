@@ -4,12 +4,17 @@ using Xamarin.Forms;
 using System.Windows.Input;
 using System.Threading.Tasks;
 using System;
+using Spotify.Views;
 
 namespace Spotify.ViewModel
 {
     public class HomeViewModel : BaseViewModel
     {
         public ICommand SearchArtistsCommand { get; private set; }
+
+        public ICommand GoToSettingsCommand { get; private set; }
+
+        private INavigation _navigation;
 
         private ObservableCollection<Artist> _artists = new ObservableCollection<Artist>();
 
@@ -40,11 +45,20 @@ namespace Spotify.ViewModel
         public string Icon
         {
             get { return _icon; }
-            set {
-                _icon = "settings_" + GetCurrentTheme().ToLower() + ".png";                
+            set
+            {
+                _icon = "settings_" + GetCurrentTheme().ToLower() + ".png";
                 OnPropertyChanged("Icon");
             }
-        }        
+        }
+
+        /// <summary>
+        /// Goes To Settings Page
+        /// </summary>        
+        private async void GoToSettings()
+        {
+            await _navigation.PushAsync(new SettingsPage());
+        }
 
         /// <summary>
         /// Populates the list of artists refer to query
@@ -58,7 +72,7 @@ namespace Spotify.ViewModel
                 IsLoading = true;
                 var artistList = await SpotifyAPI.GetArtists(query.ToLower());
                 if (artistList != null && artistList.Count > 0)
-                {                    
+                {
                     Artists.Clear();
                     foreach (Artist artist in artistList)
                     {
@@ -77,10 +91,12 @@ namespace Spotify.ViewModel
         /// <summary>
         /// Initializes properties
         /// </summary>
-        public HomeViewModel()
+        public HomeViewModel(INavigation navigation)
         {
+            _navigation = navigation;
             Icon = "settings_" + GetCurrentTheme().ToLower() + ".png";
             SearchArtistsCommand = new Command(async () => await _SearchArtists(SearchText), () => !IsLoading);
+            GoToSettingsCommand = new Command(GoToSettings);
         }
     }
 }

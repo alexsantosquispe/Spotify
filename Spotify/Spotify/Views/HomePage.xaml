@@ -7,7 +7,6 @@
     <StackLayout Padding="0" Style="{StaticResource BackgroundPage}">
         <ListView x:Name="ArtistList"
                   ItemsSource="{Binding Artists}"
-                  SelectedItem="{Binding SelectedArtist}"
                   CachingStrategy="RecycleElement"
                   SeparatorVisibility="None"                  
                   RowHeight="70">
@@ -15,7 +14,7 @@
                 <StackLayout Margin="0, 0, 0, 8">
                     <Image x:Name="ima" Source="{Binding Icon}" WidthRequest="25" HeightRequest="25" HorizontalOptions="EndAndExpand" Margin="16">
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="GoToSettings" NumberOfTapsRequired="1" />
+                            <TapGestureRecognizer Command="{Binding GoToSettingsCommand}" NumberOfTapsRequired="1" />
                         </Image.GestureRecognizers>
                     </Image>
                     <Label Text="Artists" FontSize="26" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" Margin="0, -16, 0, 8" Style="{StaticResource Title}" />
