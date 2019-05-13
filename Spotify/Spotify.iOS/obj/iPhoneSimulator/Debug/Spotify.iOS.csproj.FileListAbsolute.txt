@@ -26,10 +26,12 @@ D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\FFImage
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\FFImageLoading.Svg.Forms.pdb
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\FFImageLoading.Transformations.dll
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\FFImageLoading.Transformations.pdb
+D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Firebase.ABTesting.dll
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Firebase.Analytics.dll
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Firebase.CloudMessaging.dll
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Firebase.Core.dll
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Firebase.InstanceID.dll
+D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Firebase.RemoteConfig.dll
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Core.dll
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Core.pdb
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Platform.dll
@@ -79,8 +81,8 @@ D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\actool\
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\actool\_BundleResourceWithLogicalName.items
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\coremlc\_PartialAppManifest.items
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\coremlc\_BundleResourceWithLogicalName.items
+D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\optimized\GoogleService-Info.plist
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\optimized\
-D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\Spotify.iOS.csprojAssemblyReference.cache
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\Spotify.iOS.csproj.CoreCompileInputs.cache
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\XamlC.stamp
 D:\XamarinProjects\Spotify\Spotify\Spotify.iOS\obj\iPhoneSimulator\Debug\Spotify.iOS.csproj.CopyComplete

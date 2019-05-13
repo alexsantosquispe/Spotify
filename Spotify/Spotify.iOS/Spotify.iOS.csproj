@@ -102,8 +102,13 @@
     <Compile Include="RemoteConfigService.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <None Include="ConfigDefaults.plist">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Entitlements.plist" />
-    <None Include="GoogleService-Info.plist" />
+    <BundleResource Include="GoogleService-Info.plist">
+      <SubType>Designer</SubType>
+    </BundleResource>
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <BundleResource Include="Resources\GothamMedium_1.ttf" />
@@ -248,6 +253,9 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Xamarin.Firebase.iOS.RemoteConfig">
+      <Version>3.0.1</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

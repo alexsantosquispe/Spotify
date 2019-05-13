@@ -98,10 +98,11 @@
           "lib/Xamarin.iOS10/Plugin.Connectivity.dll": {}
         }
       },
-      "Xamarin.Build.Download/0.4.6": {
+      "Xamarin.Build.Download/0.4.11": {
         "type": "package",
         "build": {
-          "build/_._": {}
+          "build/Xamarin.Build.Download.props": {},
+          "build/Xamarin.Build.Download.targets": {}
         }
       },
       "Xamarin.FFImageLoading/2.4.4.859": {
@@ -171,12 +172,30 @@
           "lib/Xamarin.iOS10/FFImageLoading.Transformations.dll": {}
         }
       },
-      "Xamarin.Firebase.iOS.Analytics/4.0.5.1": {
+      "Xamarin.Firebase.iOS.ABTesting/2.0.0.1": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Build.Download": "0.4.6",
-          "Xamarin.Firebase.iOS.Core": "4.0.13.1",
-          "Xamarin.Firebase.iOS.InstanceID": "2.0.8"
+          "Xamarin.Build.Download": "0.4.11",
+          "Xamarin.Firebase.iOS.Analytics": "5.1.4",
+          "Xamarin.Firebase.iOS.Core": "5.1.3",
+          "Xamarin.Firebase.iOS.InstanceID": "3.2.1"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Firebase.ABTesting.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Firebase.ABTesting.dll": {}
+        },
+        "build": {
+          "build/Xamarin.Firebase.iOS.ABTesting.targets": {}
+        }
+      },
+      "Xamarin.Firebase.iOS.Analytics/5.1.4": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.4.11",
+          "Xamarin.Firebase.iOS.Core": "5.1.3",
+          "Xamarin.Firebase.iOS.InstanceID": "3.2.1"
         },
         "compile": {
           "lib/Xamarin.iOS10/Firebase.Analytics.dll": {}
@@ -185,7 +204,7 @@
           "lib/Xamarin.iOS10/Firebase.Analytics.dll": {}
         },
         "build": {
-          "build/_._": {}
+          "build/Xamarin.Firebase.iOS.Analytics.targets": {}
         }
       },
       "Xamarin.Firebase.iOS.CloudMessaging/2.0.8.1": {
@@ -206,25 +225,23 @@
           "build/_._": {}
         }
       },
-      "Xamarin.Firebase.iOS.Core/4.0.13.1": {
+      "Xamarin.Firebase.iOS.Core/5.1.3": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Build.Download": "0.4.6"
+          "Xamarin.Build.Download": "0.4.11"
         },
         "compile": {
           "lib/Xamarin.iOS10/Firebase.Core.dll": {}
         },
         "runtime": {
           "lib/Xamarin.iOS10/Firebase.Core.dll": {}
-        },
-        "build": {
-          "build/_._": {}
         }
       },
-      "Xamarin.Firebase.iOS.InstanceID/2.0.8": {
+      "Xamarin.Firebase.iOS.InstanceID/3.2.1": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Build.Download": "0.4.6"
+          "Xamarin.Build.Download": "0.4.11",
+          "Xamarin.Firebase.iOS.Core": "5.1.3"
         },
         "compile": {
           "lib/Xamarin.iOS10/Firebase.InstanceID.dll": {}
@@ -233,7 +250,26 @@
           "lib/Xamarin.iOS10/Firebase.InstanceID.dll": {}
         },
         "build": {
-          "build/_._": {}
+          "build/Xamarin.Firebase.iOS.InstanceID.targets": {}
+        }
+      },
+      "Xamarin.Firebase.iOS.RemoteConfig/3.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.4.11",
+          "Xamarin.Firebase.iOS.ABTesting": "2.0.0.1",
+          "Xamarin.Firebase.iOS.Analytics": "5.1.4",
+          "Xamarin.Firebase.iOS.Core": "5.1.3",
+          "Xamarin.Firebase.iOS.InstanceID": "3.2.1"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Firebase.RemoteConfig.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Firebase.RemoteConfig.dll": {}
+        },
+        "build": {
+          "build/Xamarin.Firebase.iOS.RemoteConfig.targets": {}
         }
       },
       "Xamarin.Forms/3.4.0.1008975": {
@@ -463,10 +499,11 @@
           "lib/Xamarin.iOS10/Plugin.Connectivity.dll": {}
         }
       },
-      "Xamarin.Build.Download/0.4.6": {
+      "Xamarin.Build.Download/0.4.11": {
         "type": "package",
         "build": {
-          "build/_._": {}
+          "build/Xamarin.Build.Download.props": {},
+          "build/Xamarin.Build.Download.targets": {}
         }
       },
       "Xamarin.FFImageLoading/2.4.4.859": {
@@ -536,12 +573,30 @@
           "lib/Xamarin.iOS10/FFImageLoading.Transformations.dll": {}
         }
       },
-      "Xamarin.Firebase.iOS.Analytics/4.0.5.1": {
+      "Xamarin.Firebase.iOS.ABTesting/2.0.0.1": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Build.Download": "0.4.6",
-          "Xamarin.Firebase.iOS.Core": "4.0.13.1",
-          "Xamarin.Firebase.iOS.InstanceID": "2.0.8"
+          "Xamarin.Build.Download": "0.4.11",
+          "Xamarin.Firebase.iOS.Analytics": "5.1.4",
+          "Xamarin.Firebase.iOS.Core": "5.1.3",
+          "Xamarin.Firebase.iOS.InstanceID": "3.2.1"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Firebase.ABTesting.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Firebase.ABTesting.dll": {}
+        },
+        "build": {
+          "build/Xamarin.Firebase.iOS.ABTesting.targets": {}
+        }
+      },
+      "Xamarin.Firebase.iOS.Analytics/5.1.4": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.4.11",
+          "Xamarin.Firebase.iOS.Core": "5.1.3",
+          "Xamarin.Firebase.iOS.InstanceID": "3.2.1"
         },
         "compile": {
           "lib/Xamarin.iOS10/Firebase.Analytics.dll": {}
@@ -550,7 +605,7 @@
           "lib/Xamarin.iOS10/Firebase.Analytics.dll": {}
         },
         "build": {
-          "build/_._": {}
+          "build/Xamarin.Firebase.iOS.Analytics.targets": {}
         }
       },
       "Xamarin.Firebase.iOS.CloudMessaging/2.0.8.1": {
@@ -571,25 +626,23 @@
           "build/_._": {}
         }
       },
-      "Xamarin.Firebase.iOS.Core/4.0.13.1": {
+      "Xamarin.Firebase.iOS.Core/5.1.3": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Build.Download": "0.4.6"
+          "Xamarin.Build.Download": "0.4.11"
         },
         "compile": {
           "lib/Xamarin.iOS10/Firebase.Core.dll": {}
         },
         "runtime": {
           "lib/Xamarin.iOS10/Firebase.Core.dll": {}
-        },
-        "build": {
-          "build/_._": {}
         }
       },
-      "Xamarin.Firebase.iOS.InstanceID/2.0.8": {
+      "Xamarin.Firebase.iOS.InstanceID/3.2.1": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Build.Download": "0.4.6"
+          "Xamarin.Build.Download": "0.4.11",
+          "Xamarin.Firebase.iOS.Core": "5.1.3"
         },
         "compile": {
           "lib/Xamarin.iOS10/Firebase.InstanceID.dll": {}
@@ -598,7 +651,26 @@
           "lib/Xamarin.iOS10/Firebase.InstanceID.dll": {}
         },
         "build": {
-          "build/_._": {}
+          "build/Xamarin.Firebase.iOS.InstanceID.targets": {}
+        }
+      },
+      "Xamarin.Firebase.iOS.RemoteConfig/3.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.4.11",
+          "Xamarin.Firebase.iOS.ABTesting": "2.0.0.1",
+          "Xamarin.Firebase.iOS.Analytics": "5.1.4",
+          "Xamarin.Firebase.iOS.Core": "5.1.3",
+          "Xamarin.Firebase.iOS.InstanceID": "3.2.1"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Firebase.RemoteConfig.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Firebase.RemoteConfig.dll": {}
+        },
+        "build": {
+          "build/Xamarin.Firebase.iOS.RemoteConfig.targets": {}
         }
       },
       "Xamarin.Forms/3.4.0.1008975": {
@@ -828,10 +900,11 @@
           "lib/Xamarin.iOS10/Plugin.Connectivity.dll": {}
         }
       },
-      "Xamarin.Build.Download/0.4.6": {
+      "Xamarin.Build.Download/0.4.11": {
         "type": "package",
         "build": {
-          "build/_._": {}
+          "build/Xamarin.Build.Download.props": {},
+          "build/Xamarin.Build.Download.targets": {}
         }
       },
       "Xamarin.FFImageLoading/2.4.4.859": {
@@ -901,12 +974,30 @@
           "lib/Xamarin.iOS10/FFImageLoading.Transformations.dll": {}
         }
       },
-      "Xamarin.Firebase.iOS.Analytics/4.0.5.1": {
+      "Xamarin.Firebase.iOS.ABTesting/2.0.0.1": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Build.Download": "0.4.6",
-          "Xamarin.Firebase.iOS.Core": "4.0.13.1",
-          "Xamarin.Firebase.iOS.InstanceID": "2.0.8"
+          "Xamarin.Build.Download": "0.4.11",
+          "Xamarin.Firebase.iOS.Analytics": "5.1.4",
+          "Xamarin.Firebase.iOS.Core": "5.1.3",
+          "Xamarin.Firebase.iOS.InstanceID": "3.2.1"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Firebase.ABTesting.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Firebase.ABTesting.dll": {}
+        },
+        "build": {
+          "build/Xamarin.Firebase.iOS.ABTesting.targets": {}
+        }
+      },
+      "Xamarin.Firebase.iOS.Analytics/5.1.4": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.4.11",
+          "Xamarin.Firebase.iOS.Core": "5.1.3",
+          "Xamarin.Firebase.iOS.InstanceID": "3.2.1"
         },
         "compile": {
           "lib/Xamarin.iOS10/Firebase.Analytics.dll": {}
@@ -915,7 +1006,7 @@
           "lib/Xamarin.iOS10/Firebase.Analytics.dll": {}
         },
         "build": {
-          "build/_._": {}
+          "build/Xamarin.Firebase.iOS.Analytics.targets": {}
         }
       },
       "Xamarin.Firebase.iOS.CloudMessaging/2.0.8.1": {
@@ -936,25 +1027,23 @@
           "build/_._": {}
         }
       },
-      "Xamarin.Firebase.iOS.Core/4.0.13.1": {
+      "Xamarin.Firebase.iOS.Core/5.1.3": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Build.Download": "0.4.6"
+          "Xamarin.Build.Download": "0.4.11"
         },
         "compile": {
           "lib/Xamarin.iOS10/Firebase.Core.dll": {}
         },
         "runtime": {
           "lib/Xamarin.iOS10/Firebase.Core.dll": {}
-        },
-        "build": {
-          "build/_._": {}
         }
       },
-      "Xamarin.Firebase.iOS.InstanceID/2.0.8": {
+      "Xamarin.Firebase.iOS.InstanceID/3.2.1": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Build.Download": "0.4.6"
+          "Xamarin.Build.Download": "0.4.11",
+          "Xamarin.Firebase.iOS.Core": "5.1.3"
         },
         "compile": {
           "lib/Xamarin.iOS10/Firebase.InstanceID.dll": {}
@@ -963,7 +1052,26 @@
           "lib/Xamarin.iOS10/Firebase.InstanceID.dll": {}
         },
         "build": {
-          "build/_._": {}
+          "build/Xamarin.Firebase.iOS.InstanceID.targets": {}
+        }
+      },
+      "Xamarin.Firebase.iOS.RemoteConfig/3.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.4.11",
+          "Xamarin.Firebase.iOS.ABTesting": "2.0.0.1",
+          "Xamarin.Firebase.iOS.Analytics": "5.1.4",
+          "Xamarin.Firebase.iOS.Core": "5.1.3",
+          "Xamarin.Firebase.iOS.InstanceID": "3.2.1"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Firebase.RemoteConfig.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Firebase.RemoteConfig.dll": {}
+        },
+        "build": {
+          "build/Xamarin.Firebase.iOS.RemoteConfig.targets": {}
         }
       },
       "Xamarin.Forms/3.4.0.1008975": {
@@ -1193,10 +1301,11 @@
           "lib/Xamarin.iOS10/Plugin.Connectivity.dll": {}
         }
       },
-      "Xamarin.Build.Download/0.4.6": {
+      "Xamarin.Build.Download/0.4.11": {
         "type": "package",
         "build": {
-          "build/_._": {}
+          "build/Xamarin.Build.Download.props": {},
+          "build/Xamarin.Build.Download.targets": {}
         }
       },
       "Xamarin.FFImageLoading/2.4.4.859": {
@@ -1266,12 +1375,30 @@
           "lib/Xamarin.iOS10/FFImageLoading.Transformations.dll": {}
         }
       },
-      "Xamarin.Firebase.iOS.Analytics/4.0.5.1": {
+      "Xamarin.Firebase.iOS.ABTesting/2.0.0.1": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Build.Download": "0.4.6",
-          "Xamarin.Firebase.iOS.Core": "4.0.13.1",
-          "Xamarin.Firebase.iOS.InstanceID": "2.0.8"
+          "Xamarin.Build.Download": "0.4.11",
+          "Xamarin.Firebase.iOS.Analytics": "5.1.4",
+          "Xamarin.Firebase.iOS.Core": "5.1.3",
+          "Xamarin.Firebase.iOS.InstanceID": "3.2.1"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Firebase.ABTesting.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Firebase.ABTesting.dll": {}
+        },
+        "build": {
+          "build/Xamarin.Firebase.iOS.ABTesting.targets": {}
+        }
+      },
+      "Xamarin.Firebase.iOS.Analytics/5.1.4": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.4.11",
+          "Xamarin.Firebase.iOS.Core": "5.1.3",
+          "Xamarin.Firebase.iOS.InstanceID": "3.2.1"
         },
         "compile": {
           "lib/Xamarin.iOS10/Firebase.Analytics.dll": {}
@@ -1280,7 +1407,7 @@
           "lib/Xamarin.iOS10/Firebase.Analytics.dll": {}
         },
         "build": {
-          "build/_._": {}
+          "build/Xamarin.Firebase.iOS.Analytics.targets": {}
         }
       },
       "Xamarin.Firebase.iOS.CloudMessaging/2.0.8.1": {
@@ -1301,25 +1428,23 @@
           "build/_._": {}
         }
       },
-      "Xamarin.Firebase.iOS.Core/4.0.13.1": {
+      "Xamarin.Firebase.iOS.Core/5.1.3": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Build.Download": "0.4.6"
+          "Xamarin.Build.Download": "0.4.11"
         },
         "compile": {
           "lib/Xamarin.iOS10/Firebase.Core.dll": {}
         },
         "runtime": {
           "lib/Xamarin.iOS10/Firebase.Core.dll": {}
-        },
-        "build": {
-          "build/_._": {}
         }
       },
-      "Xamarin.Firebase.iOS.InstanceID/2.0.8": {
+      "Xamarin.Firebase.iOS.InstanceID/3.2.1": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Build.Download": "0.4.6"
+          "Xamarin.Build.Download": "0.4.11",
+          "Xamarin.Firebase.iOS.Core": "5.1.3"
         },
         "compile": {
           "lib/Xamarin.iOS10/Firebase.InstanceID.dll": {}
@@ -1328,7 +1453,26 @@
           "lib/Xamarin.iOS10/Firebase.InstanceID.dll": {}
         },
         "build": {
-          "build/_._": {}
+          "build/Xamarin.Firebase.iOS.InstanceID.targets": {}
+        }
+      },
+      "Xamarin.Firebase.iOS.RemoteConfig/3.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.4.11",
+          "Xamarin.Firebase.iOS.ABTesting": "2.0.0.1",
+          "Xamarin.Firebase.iOS.Analytics": "5.1.4",
+          "Xamarin.Firebase.iOS.Core": "5.1.3",
+          "Xamarin.Firebase.iOS.InstanceID": "3.2.1"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Firebase.RemoteConfig.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Firebase.RemoteConfig.dll": {}
+        },
+        "build": {
+          "build/Xamarin.Firebase.iOS.RemoteConfig.targets": {}
         }
       },
       "Xamarin.Forms/3.4.0.1008975": {
@@ -1847,10 +1991,10 @@
         "xam.plugin.connectivity.nuspec"
       ]
     },
-    "Xamarin.Build.Download/0.4.6": {
-      "sha512": "MCcNQa7gHQVYDzt6YKSrAjOBNqgb3JQYZDPubtWk2s/eV4eUBicuxZczchcvuk2+US3AOuyFxIcMwnej74dWaA==",
+    "Xamarin.Build.Download/0.4.11": {
+      "sha512": "svGAoBnMVQwUbIv1+j7vDypY+2R7jruefJRmVsxhuvSFXMP8dV+yZK3UGuZa3zV5ThKimk9eqHuvRcl/JVipbA==",
       "type": "package",
-      "path": "xamarin.build.download/0.4.6",
+      "path": "xamarin.build.download/0.4.11",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1861,7 +2005,7 @@
         "build/Xamarin.Build.Download.dll",
         "build/Xamarin.Build.Download.props",
         "build/Xamarin.Build.Download.targets",
-        "xamarin.build.download.0.4.6.nupkg.sha512",
+        "xamarin.build.download.0.4.11.nupkg.sha512",
         "xamarin.build.download.nuspec"
       ]
     },
@@ -2071,16 +2215,29 @@
         "xamarin.ffimageloading.transformations.nuspec"
       ]
     },
-    "Xamarin.Firebase.iOS.Analytics/4.0.5.1": {
-      "sha512": "J5jdcGTo+VqxyigDpvU6mWyae8yFN+wpC1Tet3mBS9Wb0oQpYuP9j5Ia05/3IJEO2gX70Pd12p0Qe70lU8hPBQ==",
+    "Xamarin.Firebase.iOS.ABTesting/2.0.0.1": {
+      "sha512": "VG5cMZqhgb6B5xFkdVGRcW4Ao7LaJfd0kvXH2RxPSm8VqOq+FlLOMVcteJUU091ri1g+I5breT4cNm5Tz8rR9Q==",
       "type": "package",
-      "path": "xamarin.firebase.ios.analytics/4.0.5.1",
+      "path": "xamarin.firebase.ios.abtesting/2.0.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/Xamarin.Firebase.iOS.ABTesting.targets",
+        "lib/Xamarin.iOS10/Firebase.ABTesting.dll",
+        "xamarin.firebase.ios.abtesting.2.0.0.1.nupkg.sha512",
+        "xamarin.firebase.ios.abtesting.nuspec"
+      ]
+    },
+    "Xamarin.Firebase.iOS.Analytics/5.1.4": {
+      "sha512": "aBrMaqaSvyPqu9G4w8Ms4LU/UILNcX2VIKFyUI5SLUjEtML5+/39Q7+TvkhPq2RMwqb6E5WYxPxHl+GzM1mvDQ==",
+      "type": "package",
+      "path": "xamarin.firebase.ios.analytics/5.1.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "build/Xamarin.Firebase.iOS.Analytics.targets",
         "lib/Xamarin.iOS10/Firebase.Analytics.dll",
-        "xamarin.firebase.ios.analytics.4.0.5.1.nupkg.sha512",
+        "xamarin.firebase.ios.analytics.5.1.4.nupkg.sha512",
         "xamarin.firebase.ios.analytics.nuspec"
       ]
     },
@@ -2097,31 +2254,43 @@
         "xamarin.firebase.ios.cloudmessaging.nuspec"
       ]
     },
-    "Xamarin.Firebase.iOS.Core/4.0.13.1": {
-      "sha512": "Qp2LASB6UeFT/cAEsdMrUkGqlB9rhe10mY9/xqRe38UWHXoG7uvgtDQsJI2kHMg5uazgRSFZnt0SzHd7yPmlUA==",
+    "Xamarin.Firebase.iOS.Core/5.1.3": {
+      "sha512": "B676z2x99pBGc0+IEL5r8fCX9KT6xLlzUv6EbY4g87dFrDg/8AeixDAZNwiTV25sstz+qvm7OKVvndGkxM7uqQ==",
       "type": "package",
-      "path": "xamarin.firebase.ios.core/4.0.13.1",
+      "path": "xamarin.firebase.ios.core/5.1.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "THIRD-PARTY-NOTICES",
-        "build/Xamarin.Firebase.iOS.Core.targets",
         "lib/Xamarin.iOS10/Firebase.Core.dll",
-        "xamarin.firebase.ios.core.4.0.13.1.nupkg.sha512",
+        "xamarin.firebase.ios.core.5.1.3.nupkg.sha512",
         "xamarin.firebase.ios.core.nuspec"
       ]
     },
-    "Xamarin.Firebase.iOS.InstanceID/2.0.8": {
-      "sha512": "SGG0uH5WDSIjLUhm/qV5dIKsqScffR45PpKNYl5vnXlrdPkiP9xDQK1CBWU1zBFc+orGPMUy+nBctileV9jRQg==",
+    "Xamarin.Firebase.iOS.InstanceID/3.2.1": {
+      "sha512": "gRQppUZPkZpT70WmEjbj45EZZI4C7oPIap0tbIwNCTLAjs71VwwUU6kBbOSs+ONOHOsViYtHjwihVgZNRakfpQ==",
       "type": "package",
-      "path": "xamarin.firebase.ios.instanceid/2.0.8",
+      "path": "xamarin.firebase.ios.instanceid/3.2.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "build/Xamarin.Firebase.iOS.InstanceID.targets",
         "lib/Xamarin.iOS10/Firebase.InstanceID.dll",
-        "xamarin.firebase.ios.instanceid.2.0.8.nupkg.sha512",
+        "xamarin.firebase.ios.instanceid.3.2.1.nupkg.sha512",
         "xamarin.firebase.ios.instanceid.nuspec"
+      ]
+    },
+    "Xamarin.Firebase.iOS.RemoteConfig/3.0.1": {
+      "sha512": "au8MWisFKGz1piObtJkR+cv8eHwBkA1jBiEGo7wxAAWJZ+lelXLo1MGg5bY/oLErbveC6hhWXgD5F9ENkdKKaA==",
+      "type": "package",
+      "path": "xamarin.firebase.ios.remoteconfig/3.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/Xamarin.Firebase.iOS.RemoteConfig.targets",
+        "lib/Xamarin.iOS10/Firebase.RemoteConfig.dll",
+        "xamarin.firebase.ios.remoteconfig.3.0.1.nupkg.sha512",
+        "xamarin.firebase.ios.remoteconfig.nuspec"
       ]
     },
     "Xamarin.Forms/3.4.0.1008975": {
@@ -2280,6 +2449,7 @@
   "projectFileDependencyGroups": {
     "Xamarin.iOS,Version=v1.0": [
       "Spotify >= 1.0.0",
+      "Xamarin.Firebase.iOS.RemoteConfig >= 3.0.1",
       "Xamarin.Forms >= 3.4.0.1008975"
     ]
   },
@@ -2320,6 +2490,10 @@
     "frameworks": {
       "xamarinios10": {
         "dependencies": {
+          "Xamarin.Firebase.iOS.RemoteConfig": {
+            "target": "Package",
+            "version": "[3.0.1, )"
+          },
           "Xamarin.Forms": {
             "target": "Package",
             "version": "[3.4.0.1008975, )"
