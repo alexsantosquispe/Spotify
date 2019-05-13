@@ -14,5 +14,5 @@ namespace Spotify.Views
             
             BindingContext = new DetailViewModel(artist);
 		}
-	}
+    }
 }

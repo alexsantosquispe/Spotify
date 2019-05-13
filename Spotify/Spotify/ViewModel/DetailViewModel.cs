@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using Spotify.Models;
+using Spotify.Service;
+using Xamarin.Forms;
 
 namespace Spotify.ViewModel
 {
     public class DetailViewModel : BaseViewModel
     {
-        public Image ImageArtist { get; set; }
+        private readonly IMediaPlayerManager _mediaPlayerManager = DependencyService.Get<IMediaPlayerManager>();
+
+        public Models.Image ImageArtist { get; set; }
 
         public string Name { get; set; }
 
@@ -16,7 +20,23 @@ namespace Spotify.ViewModel
         {
             get { return _tracks; }
             set { _tracks = value; }
-        }        
+        }
+
+        private Track _selectedTrack;
+
+        public Track SelectedTrack
+        {
+            get { return _selectedTrack; }
+            set
+            {
+                if (_selectedTrack != value)
+                {
+                    
+                }
+                _selectedTrack = value;
+                Play();
+            }
+        }
 
         /// <summary>
         /// Sets artist's info
@@ -28,7 +48,7 @@ namespace Spotify.ViewModel
             ImageArtist = artist.MainImage;
             _GetTracks(artist.Id);
         }
-        
+
         /// <summary>
         /// Gets the top tracks of an artist
         /// </summary>
@@ -56,11 +76,22 @@ namespace Spotify.ViewModel
         }
 
         /// <summary>
+        /// Plays the track selected
+        /// </summary>
+        public void Play()
+        {
+            if (SelectedTrack.Preview_url != null)
+            {
+                _mediaPlayerManager.Play(SelectedTrack.Preview_url);
+            }            
+        }
+
+        /// <summary>
         /// Initializes properties
         /// </summary>
         /// <param name="artist"></param>
         public DetailViewModel(Artist artist)
-        {
+        {            
             _SetInfoArtist(artist);
         }
     }

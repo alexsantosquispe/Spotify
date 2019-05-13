@@ -13,7 +13,7 @@
                 VerticalOptions="FillAndExpand"
                 WidthRequest="60"
                 DownsampleToViewSize="true" />
-            <StackLayout Padding="16, 4" VerticalOptions="Center">
+            <StackLayout Padding="16, 4" VerticalOptions="Center" HorizontalOptions="StartAndExpand">
                 <Label Text="{Binding Name}"                       
                        FontSize="Small" 
                        LineBreakMode="TailTruncation"

@@ -8,11 +8,12 @@
              x:Class="Spotify.Views.DetailPage">
     <StackLayout Style="{StaticResource BackgroundPage}">
         <ListView ItemsSource="{Binding Tracks}"
-                    SelectionMode="None"
-                    CachingStrategy="RecycleElement"
-                    SeparatorVisibility="None"
-                    Margin="12, 4"
-                    RowHeight="70">
+                  SelectedItem="{Binding SelectedTrack}"
+                  SelectionMode="None"
+                  CachingStrategy="RecycleElement"
+                  SeparatorVisibility="None"
+                  Margin="12, 4"
+                  RowHeight="70">
             <ListView.Header>
                 <StackLayout Spacing="4">
                     <ffimageloading:CachedImage
